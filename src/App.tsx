@@ -4,8 +4,8 @@ import './App.less'
 import routers from './routers/route'
 
 function App() {
-	const router = useRoutes(routers)
-	return <>{router}</>
+  const router = useRoutes(routers)
+  return <>{router}</>
 }
 
 export default App

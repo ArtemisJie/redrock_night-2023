@@ -7,36 +7,36 @@ import Summary from '../pages/introduction/components/summary'
 import Invitation from '../pages/introduction/components/invitation'
 
 const introductionChild = [
-	{
-		path: 'summary',
-		element: <Summary />,
-	},
-	{
-		path: 'invitation',
-		element: <Invitation />,
-	},
+  {
+    path: 'summary',
+    element: <Summary />,
+  },
+  {
+    path: 'invitation',
+    element: <Invitation />,
+  },
 ]
 
 export default [
-	{
-		path: 'index',
-		element: <FirstPage />,
-	},
-	{
-		path: 'introduction',
-		element: <Introduction />,
-		children: introductionChild,
-	},
-	{
-		path: 'signup',
-		element: <SignUp />,
-	},
-	{
-		path: 'main',
-		element: <MainPage />,
-	},
-	{
-		path: '/',
-		element: <Navigate to={'/index'} />,
-	},
+  {
+    path: 'index',
+    element: <FirstPage />,
+  },
+  {
+    path: 'introduction',
+    element: <Introduction />,
+    children: introductionChild,
+  },
+  {
+    path: 'signup',
+    element: <SignUp />,
+  },
+  {
+    path: 'main',
+    element: <MainPage />,
+  },
+  {
+    path: '/',
+    element: <Navigate to={'/index'} />,
+  },
 ]

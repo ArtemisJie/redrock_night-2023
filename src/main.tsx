@@ -5,9 +5,9 @@ import App from './App'
 import './index.less'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-	<React.StrictMode>
-		<HashRouter>
-			<App />
-		</HashRouter>
-	</React.StrictMode>
+  <React.StrictMode>
+    <HashRouter>
+      <App />
+    </HashRouter>
+  </React.StrictMode>
 )

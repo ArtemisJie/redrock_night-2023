@@ -8,12 +8,12 @@
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"test": "lint-staged",
-        "pre-commit":"prettier --write && npm run eslint"
+		"pre-commit": "prettier --write ./src && npm run eslint"
 	},
 	"lint-staged": {
 		"src/**/*.tsx": [
+			"prettier --write ./src",
 			"eslint --ext .tsx,.ts --fix ./src",
-			"prettier --write",
 			"git add"
 		]
 	},
@@ -35,7 +35,7 @@
 		"eslint-plugin-react": "^7.32.1",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.1.0",
-		"prettier": "^2.8.3",
+		"prettier": "2.8.3",
 		"typescript": "^4.9.3",
 		"vite": "^4.0.0"
 	}
