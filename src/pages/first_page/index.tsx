@@ -35,7 +35,7 @@ export default function index() {
               <Link to="/signup">报名通道</Link>
             </li>
             <li>
-              <Link to="/introduction">峰会概况</Link>
+              <Link to="/introduction/summary">峰会概况</Link>
             </li>
             <li>成果展示</li>
             <li>回放入口</li>
