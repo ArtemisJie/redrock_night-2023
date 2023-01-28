@@ -5,6 +5,8 @@ import Introduction from '../pages/introduction'
 import SignUp from '../pages/sign_up'
 import Summary from '../pages/introduction/components/summary'
 import Invitation from '../pages/introduction/components/invitation'
+import Replay from '../pages/replay/index'
+import Video from '../components/video/index'
 
 const introductionChild = [
   {
@@ -38,5 +40,15 @@ export default [
   {
     path: '/',
     element: <Navigate to={'/index'} />,
+  },
+  {
+    path: '/replay',
+    element: <Replay />,
+    children: [
+      {
+        path: 'video-play/:title',
+        element: <Video />,
+      },
+    ],
   },
 ]
