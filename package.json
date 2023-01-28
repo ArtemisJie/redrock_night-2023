@@ -11,9 +11,9 @@
 		"pre-commit": "prettier --write ./src && npm run eslint"
 	},
 	"lint-staged": {
-		"src/**/*.tsx": [
-			"prettier --write ./src",
-			"eslint --ext .tsx,.ts --fix ./src",
+		"*.{tsx,ts,js,jsx,html,vue}": [
+			"prettier --write",
+			"eslint --fix",
 			"git add"
 		]
 	},
@@ -33,6 +33,7 @@
 		"@vitejs/plugin-react": "^3.0.0",
 		"eslint": "^8.32.0",
 		"eslint-plugin-react": "^7.32.1",
+		"glob": "^8.1.0",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.1.0",
 		"prettier": "2.8.3",
