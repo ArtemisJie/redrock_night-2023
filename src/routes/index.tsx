@@ -1,5 +1,5 @@
-import Replay from '../pages/Replay/index'
-import Video from '../pages/Video/index'
+import Replay from '../pages/replay/index'
+import Video from '../pages/video/index'
 const routes = [
     {
         path: '/',

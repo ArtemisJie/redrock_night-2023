@@ -1,16 +1,11 @@
-import { useState } from 'react'
-import Replay from './pages/Replay'
-import { NavLink, useRoutes } from 'react-router-dom'
-import './App.css'
-import routes from './routes/index'
+import React from 'react'
+import { useRoutes } from 'react-router-dom'
+import './App.less'
+import routers from './routers/route'
+
 function App() {
-  const element = useRoutes(routes)
-  return (
-    <>
-      <NavLink to='/replay'>to replay</NavLink>
-      {element}
-    </>
-  )
+  const router = useRoutes(routers)
+  return <>{router}</>
 }
 
 export default App
