@@ -6,7 +6,7 @@ import SignUp from '../pages/sign_up'
 import Summary from '../pages/introduction/components/summary'
 import Invitation from '../pages/introduction/components/invitation'
 import Replay from '../pages/replay/index'
-import Video from '../components/video/index'
+import Video from '../pages/replay/components/video/index'
 
 const introductionChild = [
   {
@@ -22,7 +22,7 @@ const introductionChild = [
 export default [
   {
     path: 'index',
-    element: <FirstPage />,
+    element: <Replay />,
   },
   {
     path: 'introduction',
