@@ -1,4 +1,4 @@
-import  { NavLink, Outlet}  from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import Routes from '@/routers/route'
 import './index.less'
 export default () => {
@@ -12,8 +12,12 @@ export default () => {
             <span className="geek_en">Geek Summit</span>
           </div>
         </div>
-        <a className="linkText" id='mainPage'>首页</a>
-        <a className="linkText" id='geekPage'>极客峰会</a>
+        <a className="linkText" id="mainPage">
+          首页
+        </a>
+        <a className="linkText" id="geekPage">
+          极客峰会
+        </a>
         <div className="redrockIcon">
           <img className="redrockIconImg" />
           <div className="redrockIconText">
@@ -62,4 +66,4 @@ export default () => {
       </div>
     </div>
   )
-  }
+}
