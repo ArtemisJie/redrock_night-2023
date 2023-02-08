@@ -22,7 +22,7 @@ const introductionChild = [
 export default [
   {
     path: 'index',
-    element: <Replay />,
+    element: <FirstPage />,
   },
   {
     path: 'introduction',

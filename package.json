@@ -7,8 +7,7 @@
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
-		"test": "lint-staged",
-		"pre-commit": "prettier --write ./src && npm run eslint"
+		"test": "lint-staged"
 	},
 	"lint-staged": {
 		"*.{tsx,ts,js,jsx,html,vue}": [
