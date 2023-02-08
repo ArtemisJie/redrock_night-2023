@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import avatar1 from '../../../../assets/firstPage/avatar1.png'
+import avatar2 from '../../../../assets/firstPage/avatar2.png'
+import avatar3 from '../../../../assets/firstPage/avatar3.png'
 import './index.less'
 
 interface IProps {
@@ -8,70 +11,91 @@ interface IProps {
 const data1 = [
   {
     index: 1,
-    time: '15:00',
+    time: '9:30 - 9:45',
     content: '巴拉巴拉',
-    hosts: 'redrock',
+    hosts: {
+      name: '耳东陈',
+      position: '重庆邮电大学计算机学院院长',
+      avatar: avatar1,
+    },
   },
   {
     index: 2,
-    time: '15:00',
+    time: '9:45 - 10:15',
     content: '巴拉巴拉',
-    hosts: 'redrock',
+    hosts: {
+      name: '耳东陈',
+      position: '重庆邮电大学计算机学院院长',
+      avatar: avatar2,
+    },
   },
   {
     index: 3,
-    time: '15:00',
+    time: '10:15 - 10:45',
     content: '巴拉巴拉',
-    hosts: 'redrock',
+    hosts: {
+      name: '耳东陈',
+      position: '重庆邮电大学计算机学院院长',
+      avatar: avatar3,
+    },
   },
   {
     index: 4,
-    time: '15:00',
-    content: '巴拉巴拉',
-    hosts: 'redrock',
-  },
-  {
-    index: 5,
-    time: '15:00',
-    content: '巴拉巴拉',
-    hosts: 'redrock',
+    time: '10:45 - 11:00',
+    content: '咕噜咕噜',
+    hosts: {
+      name: '耳东陈',
+      position: '重庆邮电大学计算机学院院长',
+      avatar: avatar1,
+    },
   },
 ]
 const data2 = [
   {
     index: 1,
-    time: '15:00',
+    time: '9:30 - 9:45',
     content: '咕噜咕噜',
-    hosts: 'bluemountain',
+    hosts: {
+      name: '耳东陈',
+      position: '重庆邮电大学计算机学院院长',
+      avatar: avatar1,
+    },
   },
   {
     index: 2,
-    time: '15:00',
+    time: '9:45 - 10:15',
     content: '咕噜咕噜',
-    hosts: 'bluemountain',
+    hosts: {
+      name: '耳东陈',
+      position: '重庆邮电大学计算机学院院长',
+      avatar: avatar2,
+    },
   },
   {
     index: 3,
-    time: '15:00',
+    time: '10:15 - 10:45',
     content: '咕噜咕噜',
-    hosts: 'bluemountain',
+    hosts: {
+      name: '耳东陈',
+      position: '重庆邮电大学计算机学院院长',
+      avatar: avatar3,
+    },
   },
   {
     index: 4,
-    time: '15:00',
+    time: '10:45 - 11:00',
     content: '咕噜咕噜',
-    hosts: 'bluemountain',
-  },
-  {
-    index: 5,
-    time: '15:00',
-    content: '咕噜咕噜',
-    hosts: 'bluemountain',
+    hosts: {
+      name: '耳东陈',
+      position: '重庆邮电大学计算机学院院长',
+      avatar: avatar1,
+    },
   },
 ]
 export default function index(props: IProps) {
   const { changedata } = props
   const [nowData, setNowData] = useState(data1)
+  const [index, setIndex] = useState(0)
   useEffect(() => {
     switch (changedata) {
       case 0:
@@ -85,15 +109,34 @@ export default function index(props: IProps) {
     }
   }, [changedata])
 
+  function change(i: number) {
+    return () => {
+      setIndex(i)
+    }
+  }
+
   return (
     <div>
       <ul className="schedule_list">
         {nowData.map((e, i) => {
           return (
-            <li key={i}>
-              <p className="time">{e.time}</p>
-              <p className="content">{e.content}</p>
-              <p className="hosts">{e.hosts}</p>
+            <li key={i} className={[index === i ? 'active' : ''].join('')} onClick={change(i)}>
+              <span className="time">{e.time}</span>
+              <span className="line"></span>
+              <div className="card">
+                <span className="content">{e.content}</span>
+                <span className="hosts">
+                  <div>
+                    <p className="name">{e.hosts.name}</p>
+                    <p className="position">{e.hosts.position}</p>
+                  </div>
+                  <img src={e.hosts.avatar} alt="" />
+                </span>
+                <div className="shadow"></div>
+              </div>
+              <span className="circle">
+                <span className="triangle"></span>
+              </span>
             </li>
           )
         })}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper'
 import Schedule from './components/schedule'
@@ -14,16 +14,51 @@ import navPic1 from '../../assets/firstPage/nav1.png'
 import navPic2 from '../../assets/firstPage/nav2.png'
 import navPic3 from '../../assets/firstPage/nav3.png'
 import navPic4 from '../../assets/firstPage/nav4.png'
+import smallBannerBg from '../../assets/firstPage/smallBannerBg.png'
+
+interface ICalendar {
+  num: number
+  isDuration: boolean
+}
 
 export default function index() {
   const scheduleName = ['峰会开幕式', '圆桌讨论']
   const resultName = ['题目1', '题目2', '题目3', '题目4', '题目5', '题目6', '题目7', '题目8', '题目9', '题目10']
   const [nowSchedule, setNowSchedule] = useState(0)
-  const [calendar, setcalendar] = useState({
+  const calendarSetting = {
     year: 2023,
     month: 4,
     duration: [12, 16],
-  })
+  }
+  const [calendar, setcalendar] = useState<ICalendar[]>([])
+  useEffect(() => {
+    const time = new Date(calendarSetting.year, calendarSetting.month - 1, 1)
+    console.log(time.getDay())
+
+    const arr = [7, 1, 2, 3, 4, 5, 6]
+    const week = time.getDay()
+    const d = new Date(calendarSetting.year, calendarSetting.month - 1, 0).getDate()
+    console.log(d)
+
+    let flag = true
+    let count = 1
+    const temp: ICalendar[] = []
+    for (let i = 1; i <= 42; i++) {
+      if (arr[week] === i) flag = false
+      if (flag || count >= d) {
+        temp.push({
+          num: 0,
+          isDuration: false,
+        })
+      } else {
+        temp.push({
+          num: count++,
+          isDuration: i >= calendarSetting.duration[0] && i <= calendarSetting.duration[1] ? true : false,
+        })
+      }
+      setcalendar(temp)
+    }
+  }, [])
 
   function changeSchedule(index: number) {
     return () => {
@@ -75,7 +110,11 @@ export default function index() {
           <div className="slideBg"></div>
           <div className="small_banner">
             <Swiper navigation={true} loop={true} modules={[Navigation, Pagination]} className="mySwiper">
-              <SwiperSlide>Slide 1</SwiperSlide>
+              <SwiperSlide>
+                <div className="slide1">
+                  <img src={smallBannerBg} alt="" />
+                </div>
+              </SwiperSlide>
               <SwiperSlide>Slide 2</SwiperSlide>
               <SwiperSlide>Slide 3</SwiperSlide>
             </Swiper>
@@ -83,22 +122,40 @@ export default function index() {
           <div className="calendar">
             <div className="head">
               <span>峰会报名时间</span>
-              <span>{`${calendar.year}/${calendar.month}`}</span>
+              <span>{`${calendarSetting.year}`}</span>
+              <span className="slash">/</span>
+              <span>{`${calendarSetting.month < 10 ? '0' + calendarSetting.month : calendarSetting.month}`}</span>
+            </div>
+            <div className="calenderBody">
+              <div className="week">一</div>
+              <div className="week">二</div>
+              <div className="week">三</div>
+              <div className="week">四</div>
+              <div className="week">五</div>
+              <div className="week">六</div>
+              <div className="week">日</div>
+              {calendar.map((e, i) => {
+                return (
+                  <div key={i} className={['day', e.isDuration ? 'duration' : ''].join(' ')}>
+                    {e.num ? e.num : ''}
+                  </div>
+                )
+              })}
             </div>
           </div>
           <div className="calendarBg"></div>
         </div>
         <div className="schedule">
-          <h1>Event schedule</h1>
-          <h2>活动日程</h2>
+          <p className="title">活动日程</p>
           <div className="tab">
             {scheduleName.map((e, i) => (
               <span key={i} className={nowSchedule === i ? 'active' : ''} onClick={changeSchedule(i)}>
                 {e}
+                <span className="border"></span>
               </span>
             ))}
-            <Schedule changedata={nowSchedule}></Schedule>
           </div>
+          <Schedule changedata={nowSchedule}></Schedule>
         </div>
         <div className="result">
           <h1>Result display</h1>
