@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper'
 import Schedule from './components/schedule'
-import Header from '../../components/header'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -15,7 +14,6 @@ import resulticon2 from '../../assets/firstPage/resulticon2.png'
 import resulticon3 from '../../assets/firstPage/resulticon3.png'
 import resulticon4 from '../../assets/firstPage/resulticon4.png'
 import smallBannerBg from '../../assets/firstPage/smallBannerBg.png'
-import qrcode from '../../assets/firstPage/qrcode.png'
 
 interface ICalendar {
   num: number
@@ -55,13 +53,9 @@ export default function index() {
   const [calendar, setcalendar] = useState<ICalendar[]>([])
   useEffect(() => {
     const time = new Date(calendarSetting.year, calendarSetting.month - 1, 1)
-    console.log(time.getDay())
-
     const arr = [7, 1, 2, 3, 4, 5, 6]
     const week = time.getDay()
     const d = new Date(calendarSetting.year, calendarSetting.month - 1, 0).getDate()
-    console.log(d)
-
     let flag = true
     let count = 1
     const temp: ICalendar[] = []
@@ -75,7 +69,7 @@ export default function index() {
       } else {
         temp.push({
           num: count++,
-          isDuration: i >= calendarSetting.duration[0] && i <= calendarSetting.duration[1] ? true : false,
+          isDuration: count >= calendarSetting.duration[0] + 1 && count <= calendarSetting.duration[1] + 1,
         })
       }
       setcalendar(temp)
@@ -89,7 +83,6 @@ export default function index() {
   }
   return (
     <>
-      <Header></Header>
       <div className="main_root">
         <div className="banner">
           <Swiper navigation={true} pagination={true} loop={true} modules={[Navigation, Pagination]} className="mySwiper">
@@ -158,7 +151,10 @@ export default function index() {
               <div className="week">日</div>
               {calendar.map((e, i) => {
                 return (
-                  <div key={i} className={['day', e.isDuration ? 'duration' : ''].join(' ')}>
+                  <div
+                    key={i}
+                    className={['day', e.isDuration ? 'duration' : '', e.num === calendarSetting.duration[0] ? 'border1' : '', e.num === calendarSetting.duration[1] ? 'border2' : ''].join(' ')}
+                  >
                     {e.num ? e.num : ''}
                   </div>
                 )
@@ -192,24 +188,6 @@ export default function index() {
             ))}
           </ul>
         </div>
-        <footer>
-          <div className="logo"></div>
-          <div className="qrCode">
-            <span>
-              与新世界对话
-              <br />
-              为新技术发声
-            </span>
-            <span>
-              <img src={qrcode} alt="" />
-            </span>
-          </div>
-          <div className="line"></div>
-          <div className="text">
-            <span className="copyright">COPYRIGHT @ 红岩网校工作站</span>
-            <span className="email">邮箱：hr@geeksummit.cn</span>
-          </div>
-        </footer>
       </div>
     </>
   )

@@ -54,6 +54,8 @@
       }
     }
     .circle {
+      z-index: 2;
+      transition: all 500ms;
       position: absolute;
       margin: 3.45vw 10.2vw;
       width: 1.5vw;
@@ -175,24 +177,28 @@
         left: 0.6vw;
         top: 0.3vw;
       }
+      & ~ .time {
+        font-size: 1.6vw;
+        line-height: 1.5vw;
+      }
     }
   }
-  .active {
-    .shadow {
-      transform: translateY(0vw);
-    }
-    .card .hosts div .position {
-      color: #dce0e7;
-    }
-    .circle .triangle {
-      transition: all 500ms;
-      transform: rotateZ(-90deg);
-      left: 0.6vw;
-      top: 0.3vw;
-    }
-    .time {
-      font-size: 1.6vw;
-      line-height: 1.5vw;
-    }
-  }
+//   .active {
+//     .shadow {
+//       transform: translateY(0vw);
+//     }
+//     .card .hosts div .position {
+//       color: #dce0e7;
+//     }
+//     .circle .triangle {
+//       transition: all 500ms;
+//       transform: rotateZ(-90deg);
+//       left: 0.6vw;
+//       top: 0.3vw;
+//     }
+//     .time {
+//       font-size: 1.6vw;
+//       line-height: 1.5vw;
+//     }
+//   }
 }

@@ -288,9 +288,9 @@
 }
 .arrange {
   position: relative;
-  height: 45vw;
+  height: 50vw;
   background-color: #030c1e;
-  border-top: 20px solid #030c1e;
+  border-top: 100px solid #030c1e;
   margin-top: -1vw;
   .title {
     .titleSetting();
@@ -351,136 +351,137 @@
       transform: scale(1.1);
     }
   }
-}
-.calendar {
-  position: absolute;
-  z-index: 2;
-  width: 32.8056vw;
-  height: 27.6667vw;
-  left: 56.5694vw;
-  top: 11vw;
-  background: rgba(176, 179, 187, 0.1);
-  box-shadow: 0px 0px 20px rgba(4, 11, 25, 0.36), inset 2px 2px 4px rgba(202, 209, 213, 0.25);
-  backdrop-filter: blur(20px);
-  border-radius: 4px;
-  @media (max-width: 500px) {
-    left: 50.5694vw;
-    width: calc(32.8056vw * 1.3);
-    height: calc(27.6667vw * 1.4);
-  }
-}
-.calendarBg {
-  position: absolute;
-  width: 15.9875vw;
-  height: 4.7vw;
-  left: 78.2vw;
-  top: 8.5vw;
-  background: linear-gradient(285.31deg, #2a62fe 5.6%, #24d6e2 99.41%);
-}
-.head {
-  span:nth-child(1) {
-    display: inline-block;
+  .calendar {
     position: absolute;
-    top: 2.9167vw;
-    left: 3.3333vw;
-    width: 15vw;
-    height: 1.9444vw;
-    color: #fff;
-    background-image: url(../../assets/firstPage/smallLogo.png);
-    background-size: 2.1vw 1.58vw;
-    background-repeat: no-repeat;
-    padding-left: 2.7vw;
-    line-height: 1.9444vw;
-    background-position: 0 0.2vw;
-    font-size: 1.1111vw;
+    z-index: 2;
+    width: 32.8056vw;
+    height: 27.6667vw;
+    left: 56.5694vw;
+    top: 11vw;
+    background: rgba(176, 179, 187, 0.1);
+    box-shadow: 0px 0px 20px rgba(4, 11, 25, 0.36), inset 2px 2px 4px rgba(202, 209, 213, 0.25);
+    backdrop-filter: blur(20px);
+    border-radius: 4px;
     @media (max-width: 500px) {
-      width: 20vw;
-      font-size: 5px;
+      left: 50.5694vw;
+      width: calc(32.8056vw * 1.3);
+      height: calc(27.6667vw * 1.4);
     }
   }
-  span:nth-last-child(-n + 3) {
+  .calendarBg {
     position: absolute;
-    font-family: 'DIN';
-    font-weight: 700;
-    font-size: 1.9444vw;
-    line-height: 2.0833vw;
+    width: 15.9875vw;
+    height: 4.7vw;
+    left: 78.2vw;
+    top: 8.5vw;
+    background: linear-gradient(285.31deg, #2a62fe 5.6%, #24d6e2 99.41%);
+  }
+  .head {
+    span:nth-child(1) {
+      display: inline-block;
+      position: absolute;
+      top: 2.9167vw;
+      left: 3.3333vw;
+      width: 15vw;
+      height: 1.9444vw;
+      color: #fff;
+      background-image: url(../../assets/firstPage/smallLogo.png);
+      background-size: 2.1vw 1.58vw;
+      background-repeat: no-repeat;
+      padding-left: 2.7vw;
+      line-height: 1.9444vw;
+      background-position: 0 0.2vw;
+      font-size: 1.1111vw;
+      @media (max-width: 500px) {
+        width: 20vw;
+        font-size: 5px;
+      }
+    }
+    span:nth-last-child(-n + 3) {
+      position: absolute;
+      font-family: 'DIN';
+      font-weight: 700;
+      font-size: 1.9444vw;
+      line-height: 2.0833vw;
+      color: #ffffff;
+      top: 2.5vw;
+    }
+    .slash {
+      left: 25.7vw;
+      color: #3c7eff !important;
+      @media (max-width: 500px) {
+        left: 34.8vw;
+      }
+    }
+    span:nth-child(2) {
+      width: 8.0556vw;
+      height: 2.0833vw;
+      left: 21vw;
+      @media (max-width: 500px) {
+        left: 27.5vw;
+      }
+    }
+    span:nth-child(4) {
+      width: 8.0556vw;
+      height: 2.0833vw;
+      left: 27vw;
+      @media (max-width: 500px) {
+        left: 36vw;
+      }
+    }
+  }
+  .calenderBody {
+    position: absolute;
+    top: 5.5556vw;
+    left: 2.7vw;
+    width: 27.6vw;
+    height: 18.6111vw;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(7, 14.29%);
+    grid-template-rows: 20% repeat(5, 18.5%);
     color: #ffffff;
-    top: 2.5vw;
-  }
-  .slash {
-    left: 25.7vw;
-    color: #3c7eff !important;
     @media (max-width: 500px) {
-      left: 34.8vw;
+      top: 10vw;
+      width: calc(27.6vw * 1.3);
+      height: calc(18.6111vw * 1.3);
     }
-  }
-  span:nth-child(2) {
-    width: 8.0556vw;
-    height: 2.0833vw;
-    left: 21vw;
-    @media (max-width: 500px) {
-      left: 27.5vw;
+    .week {
+      text-align: center;
+      font-family: 'Microsoft YaHei';
+      font-weight: 400;
+      font-size: 1.1111vw;
+      line-height: 1.9444vw;
+      color: #858990;
+      @media (max-width: 500px) {
+        font-size: 5px;
+      }
     }
-  }
-  span:nth-child(4) {
-    width: 8.0556vw;
-    height: 2.0833vw;
-    left: 27vw;
-    @media (max-width: 500px) {
-      left: 36vw;
+    .day {
+      height: 2.5vw;
+      text-align: center;
+      line-height: 2.5vw;
+      font-family: 'DIN';
+      font-weight: 100;
+      font-size: 1.3889vw;
+      color: #dce0e7;
     }
-  }
-}
-.calenderBody {
-  position: absolute;
-  top: 5.5556vw;
-  left: 2.7vw;
-  width: 27.6vw;
-  height: 18.6111vw;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(7, 14.29%);
-  grid-template-rows: 20% repeat(5, 18.5%);
-  color: #ffffff;
-  @media (max-width: 500px) {
-    top: 10vw;
-    width: calc(27.6vw * 1.3);
-    height: calc(18.6111vw * 1.3);
-  }
-  .week {
-    text-align: center;
-    font-family: 'Microsoft YaHei';
-    font-weight: 400;
-    font-size: 1.1111vw;
-    line-height: 1.9444vw;
-    color: #858990;
-    @media (max-width: 500px) {
-      font-size: 5px;
+    .duration {
+      background: #3c7eff;
     }
-  }
-  .day {
-    height: 2.5vw;
-    text-align: center;
-    line-height: 2.5vw;
-    font-family: 'DIN';
-    font-weight: 100;
-    font-size: 1.3889vw;
-    color: #dce0e7;
-  }
-  .duration {
-    background: #3c7eff;
-    // border-radius: 4px;
-  }
-  .duration:first-child,
-  .duration:last-child {
-    background-color: #fff;
+    .border1 {
+      border-radius: 4px 0 0 4px;
+    }
+    .border2 {
+      border-radius: 0 4px 4px 0;
+    }
   }
 }
 
 .schedule {
   position: relative;
   width: 100%;
-  height: 50vw;
+  height: 55vw;
   background-color: #030c1e;
   @media (max-width: 500px) {
     height: 60vw;
@@ -715,130 +716,6 @@
     }
     .item:nth-child(even) {
       margin-top: 15vw;
-    }
-  }
-}
-
-footer {
-  position: relative;
-  margin-top: 0;
-  width: 100%;
-  height: 19.0972vw;
-  background-color: #001134;
-  .logo {
-    position: absolute;
-    width: 13.2639vw;
-    height: 3.1944vw;
-    left: 10.56%;
-    top: 26.55%;
-    background-image: url(../../assets/firstPage/logo.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    @media (max-width: 500px) {
-      top: 7vw;
-      transform: scale(1.5);
-    }
-  }
-  .qrCode {
-    position: absolute;
-    left: 72.7083vw;
-    top: 3.3333vw;
-    width: 6.6667vw;
-    height: 3.8889vw;
-    @media (max-width: 500px) {
-      left: 60vw;
-    }
-    span:nth-child(1) {
-      position: absolute;
-      top: 1vw;
-      display: inline-block;
-      width: 10vw;
-      font-family: 'Microsoft YaHei';
-      font-weight: 400;
-      font-size: 1.1111vw;
-      line-height: 1.9444vw;
-      color: #b3b6bd;
-      @media (max-width: 500px) {
-        display: none;
-      }
-    }
-    span:nth-child(1)::before {
-      position: absolute;
-      right: 15%;
-      top: -0.7556vw;
-      content: '';
-      width: 30px;
-      height: 4px;
-      background: #1d4dd2;
-    }
-    span:nth-child(2) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 6.7361vw;
-      height: 6.7361vw;
-      position: absolute;
-      left: 11.3194vw;
-      top: 8.25%;
-      background-color: #fff;
-      @media (max-width: 500px) {
-        transform: scale(1.5);
-        left: 21vw;
-        top: 2vw;
-      }
-    }
-    img {
-      width: 5.625vw;
-      height: 5.625vw;
-    }
-  }
-  .line {
-    position: absolute;
-    width: 81.2vw;
-    height: 3vw;
-    left: 10%;
-    right: 10.56%;
-    top: 72.63%;
-    bottom: 22.23%;
-    background-image: url(../../assets/firstPage/footerline.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  .text {
-    position: absolute;
-    left: 10.5556vw;
-    top: 14.375vw;
-    width: 31.6667vw;
-    height: 1.3889vw;
-    @media (max-width: 930px) {
-      transform: scale(0.7);
-      transform-origin: 0 0;
-    }
-    @media (max-width: 700px) {
-      display: none;
-    }
-    .copyright {
-      display: inline-block;
-      width: 100%;
-      position: absolute;
-      top: 75.27%;
-      font-family: 'Microsoft YaHei';
-      font-weight: 400;
-      font-size: 5px;
-      line-height: 1.25vw;
-      color: #575b62;
-    }
-    .email {
-      display: inline-block;
-      position: absolute;
-      width: 100%;
-      left: 20vw;
-      top: 76%;
-      font-family: 'Microsoft YaHei';
-      font-weight: 400;
-      font-size: 5px;
-      line-height: 1.25vw;
-      color: #575b62;
     }
   }
 }

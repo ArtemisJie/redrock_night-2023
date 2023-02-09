@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Content from './components/content'
+import poster from '../../assets/roundTable/poster.png'
 import './index.less'
 
 export default function index() {
@@ -13,10 +14,10 @@ export default function index() {
   }
   return (
     <div className="main_root">
-      <div className="poster"></div>
+      <img src={poster} className="poster"></img>
       <ul className="switch">
         {tabNames.map((e, i) => (
-          <li key={i} onClick={changeContent(i)}>
+          <li key={i} onClick={changeContent(i)} className={[nowContent === i ? 'active' : ''].join(' ')}>
             {e}
           </li>
         ))}

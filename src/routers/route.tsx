@@ -1,6 +1,6 @@
 import { Navigate } from 'react-router-dom'
 import FirstPage from '../pages/first_page'
-import MainPage from '../pages/main_page'
+import RoundTable from '../pages/round_table'
 import Introduction from '../pages/introduction'
 import SignUp from '../pages/sign_up'
 import Summary from '../pages/introduction/components/summary'
@@ -34,8 +34,8 @@ export default [
     element: <SignUp />,
   },
   {
-    path: 'main',
-    element: <MainPage />,
+    path: 'round-table',
+    element: <RoundTable />,
   },
   {
     path: '/',
