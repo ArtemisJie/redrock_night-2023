@@ -10,11 +10,12 @@ import './index.less'
 import { Link } from 'react-router-dom'
 import title1Top from '../../assets/firstPage/title1Top.png'
 import title1Bottom from '../../assets/firstPage/title1Bottom.png'
-import navPic1 from '../../assets/firstPage/nav1.png'
-import navPic2 from '../../assets/firstPage/nav2.png'
-import navPic3 from '../../assets/firstPage/nav3.png'
-import navPic4 from '../../assets/firstPage/nav4.png'
+import resulticon1 from '../../assets/firstPage/resulticon1.png'
+import resulticon2 from '../../assets/firstPage/resulticon2.png'
+import resulticon3 from '../../assets/firstPage/resulticon3.png'
+import resulticon4 from '../../assets/firstPage/resulticon4.png'
 import smallBannerBg from '../../assets/firstPage/smallBannerBg.png'
+import qrcode from '../../assets/firstPage/qrcode.png'
 
 interface ICalendar {
   num: number
@@ -23,7 +24,28 @@ interface ICalendar {
 
 export default function index() {
   const scheduleName = ['峰会开幕式', '圆桌讨论']
-  const resultName = ['题目1', '题目2', '题目3', '题目4', '题目5', '题目6', '题目7', '题目8', '题目9', '题目10']
+  const resultData = [
+    {
+      title: '无处不在的云原生',
+      content: '“无处不在的云原生”，是新一代开发者与开发环境的大势所趋，2022年1024程序员日，第二期Techo Day肟讯技术开放日旨在呈现腾讯更底层的云原生理念成果、全栈开发能力及最佳案例实践!',
+      icon: resulticon1,
+    },
+    {
+      title: '设计不止36技',
+      content: '“无处不在的云原生”，是新一代开发者与开发环境的大势所趋，2022年1024程序员日，第二期Techo Day肟讯技术开放日旨在呈现腾讯更底层的云原生理念成果、全栈开发能力及最佳案例实践!',
+      icon: resulticon2,
+    },
+    {
+      title: '如何有效提升产研效率',
+      content: '“无处不在的云原生”，是新一代开发者与开发环境的大势所趋，2022年1024程序员日，第二期Techo Day肟讯技术开放日旨在呈现腾讯更底层的云原生理念成果、全栈开发能力及最佳案例实践!',
+      icon: resulticon3,
+    },
+    {
+      title: 'Web端工具如何设计',
+      content: '“无处不在的云原生”，是新一代开发者与开发环境的大势所趋，2022年1024程序员日，第二期Techo Day肟讯技术开放日旨在呈现腾讯更底层的云原生理念成果、全栈开发能力及最佳案例实践!',
+      icon: resulticon4,
+    },
+  ]
   const [nowSchedule, setNowSchedule] = useState(0)
   const calendarSetting = {
     year: 2023,
@@ -86,27 +108,27 @@ export default function index() {
         <ul className="navgation">
           <li>
             <Link to="/signup">
-              <img src={navPic1} alt="" />
+              <div className="navPic1"></div>
               <p>报名通道</p>
             </Link>
           </li>
           <li>
             <Link to="/introduction/summary">
-              <img src={navPic2} alt="" />
+              <div className="navPic2"></div>
               <p>峰会概况</p>
             </Link>
           </li>
           <li>
-            <img src={navPic3} alt="" />
+            <div className="navPic3"></div>
             <p>成果展示</p>
           </li>
           <li>
-            <img src={navPic4} className="pic4" alt="" />
+            <div className="navPic4"></div>
             <p>回放入口</p>
           </li>
         </ul>
         <div className="arrange">
-          <p className="title">日程安排</p>
+          <h1 className="title">日程安排</h1>
           <div className="slideBg"></div>
           <div className="small_banner">
             <Swiper navigation={true} loop={true} modules={[Navigation, Pagination]} className="mySwiper">
@@ -146,7 +168,7 @@ export default function index() {
           <div className="calendarBg"></div>
         </div>
         <div className="schedule">
-          <p className="title">活动日程</p>
+          <h1 className="title">活动日程</h1>
           <div className="tab">
             {scheduleName.map((e, i) => (
               <span key={i} className={nowSchedule === i ? 'active' : ''} onClick={changeSchedule(i)}>
@@ -158,17 +180,36 @@ export default function index() {
           <Schedule changedata={nowSchedule}></Schedule>
         </div>
         <div className="result">
-          <h1>Result display</h1>
-          <h2>成果展示</h2>
+          <h1 className="title">成果展示</h1>
           <ul>
-            {resultName.map(e => (
-              <li key={e} className="item">
-                {e}
+            {resultData.map((e, i) => (
+              <li key={i} className="item">
+                <h2>{e.title}</h2>
+                <p>{e.content}</p>
+                <button></button>
+                <img src={e.icon} alt="" />
               </li>
             ))}
           </ul>
         </div>
-        <footer>footer</footer>
+        <footer>
+          <div className="logo"></div>
+          <div className="qrCode">
+            <span>
+              与新世界对话
+              <br />
+              为新技术发声
+            </span>
+            <span>
+              <img src={qrcode} alt="" />
+            </span>
+          </div>
+          <div className="line"></div>
+          <div className="text">
+            <span className="copyright">COPYRIGHT @ 红岩网校工作站</span>
+            <span className="email">邮箱：hr@geeksummit.cn</span>
+          </div>
+        </footer>
       </div>
     </>
   )
