@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination } from 'swiper'
+import { Navigation, Pagination, Controller, Autoplay } from 'swiper'
 import Schedule from './components/schedule'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import 'swiper/css/autoplay'
 import './index.less'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import title1Top from '../../assets/firstPage/title1Top.png'
 import title1Bottom from '../../assets/firstPage/title1Bottom.png'
 import resulticon1 from '../../assets/firstPage/resulticon1.png'
@@ -21,30 +22,36 @@ interface ICalendar {
 }
 
 export default function index() {
+  const navigate = useNavigate()
   const scheduleName = ['峰会开幕式', '圆桌讨论']
   const resultData = [
     {
       title: '无处不在的云原生',
       content: '“无处不在的云原生”，是新一代开发者与开发环境的大势所趋，2022年1024程序员日，第二期Techo Day肟讯技术开放日旨在呈现腾讯更底层的云原生理念成果、全栈开发能力及最佳案例实践!',
       icon: resulticon1,
+      link: 'a',
     },
     {
       title: '设计不止36技',
       content: '“无处不在的云原生”，是新一代开发者与开发环境的大势所趋，2022年1024程序员日，第二期Techo Day肟讯技术开放日旨在呈现腾讯更底层的云原生理念成果、全栈开发能力及最佳案例实践!',
       icon: resulticon2,
+      link: 'a',
     },
     {
       title: '如何有效提升产研效率',
       content: '“无处不在的云原生”，是新一代开发者与开发环境的大势所趋，2022年1024程序员日，第二期Techo Day肟讯技术开放日旨在呈现腾讯更底层的云原生理念成果、全栈开发能力及最佳案例实践!',
       icon: resulticon3,
+      link: 'a',
     },
     {
       title: 'Web端工具如何设计',
       content: '“无处不在的云原生”，是新一代开发者与开发环境的大势所趋，2022年1024程序员日，第二期Techo Day肟讯技术开放日旨在呈现腾讯更底层的云原生理念成果、全栈开发能力及最佳案例实践!',
       icon: resulticon4,
+      link: 'a',
     },
   ]
   const [nowSchedule, setNowSchedule] = useState(0)
+  const [navArr, setNavArr] = useState(false)
   const calendarSetting = {
     year: 2023,
     month: 4,
@@ -84,14 +91,29 @@ export default function index() {
   return (
     <>
       <div className="main_root">
-        <div className="banner">
-          <Swiper navigation={true} pagination={true} loop={true} modules={[Navigation, Pagination]} className="mySwiper">
+        <div
+          className="banner"
+          onMouseEnter={() => {
+            setNavArr(true)
+          }}
+          onMouseLeave={() => {
+            setNavArr(false)
+          }}
+        >
+          <Swiper navigation={navArr} autoplay={{ delay: 8000 }} pagination={{ clickable: true }} loop={true} modules={[Navigation, Pagination, Controller, Autoplay]} className="mySwiper">
             <SwiperSlide>
               <div className="slide1">
                 <img src={title1Bottom} alt="共码，共创，共未来。与新世界对话，为新技术发声。" className="titleBottom" />
                 <img src={title1Top} alt="共码，共创，共未来。与新世界对话，为新技术发声。" className="titleTop" />
                 <p className="subTitle">--重庆邮电大学第一届极客峰会</p>
-                <button className="btn">了解更多</button>
+                <button
+                  className="btn"
+                  onClick={() => {
+                    navigate('/round-table')
+                  }}
+                >
+                  了解更多
+                </button>
               </div>
             </SwiperSlide>
             <SwiperSlide>Slide 2</SwiperSlide>
@@ -123,12 +145,18 @@ export default function index() {
         <div className="arrange">
           <h1 className="title">日程安排</h1>
           <div className="slideBg"></div>
-          <div className="small_banner">
-            <Swiper navigation={true} loop={true} modules={[Navigation, Pagination]} className="mySwiper">
+          <div
+            className="small_banner"
+            onMouseEnter={() => {
+              setNavArr(true)
+            }}
+            onMouseLeave={() => {
+              setNavArr(false)
+            }}
+          >
+            <Swiper navigation={navArr} loop={true} modules={[Navigation]} className="mySwiper">
               <SwiperSlide>
-                <div className="slide1">
-                  <img src={smallBannerBg} alt="" />
-                </div>
+                <img src={smallBannerBg} alt="" />
               </SwiperSlide>
               <SwiperSlide>Slide 2</SwiperSlide>
               <SwiperSlide>Slide 3</SwiperSlide>
@@ -182,7 +210,11 @@ export default function index() {
               <li key={i} className="item">
                 <h2>{e.title}</h2>
                 <p>{e.content}</p>
-                <button></button>
+                <button
+                  onClick={() => {
+                    navigate(e.link)
+                  }}
+                ></button>
                 <img src={e.icon} alt="" />
               </li>
             ))}

@@ -14,7 +14,11 @@ export default function index() {
   }
   return (
     <div className="main_root">
-      <img src={poster} className="poster"></img>
+      <div className="poster">
+        <div className="text1"></div>
+        <div className="text2"></div>
+        <div className="text3">重庆邮电大学第一届极客峰会</div>
+      </div>
       <ul className="switch">
         {tabNames.map((e, i) => (
           <li key={i} onClick={changeContent(i)} className={[nowContent === i ? 'active' : ''].join(' ')}>

@@ -8,17 +8,6 @@ import Invitation from '../pages/introduction/components/invitation'
 import Replay from '../pages/replay/index'
 import Video from '../pages/replay/components/video/index'
 
-const introductionChild = [
-  {
-    path: 'summary',
-    element: <Summary />,
-  },
-  {
-    path: 'invitation',
-    element: <Invitation />,
-  },
-]
-
 export default [
   {
     path: 'index',
@@ -27,7 +16,16 @@ export default [
   {
     path: 'introduction',
     element: <Introduction />,
-    children: introductionChild,
+    children: [
+      {
+        path: 'summary',
+        element: <Summary />,
+      },
+      {
+        path: 'invitation',
+        element: <Invitation />,
+      },
+    ],
   },
   {
     path: 'signup',
@@ -38,10 +36,6 @@ export default [
     element: <RoundTable />,
   },
   {
-    path: '/',
-    element: <Navigate to={'/index'} />,
-  },
-  {
     path: '/replay',
     element: <Replay />,
     children: [
@@ -50,5 +44,9 @@ export default [
         element: <Video />,
       },
     ],
+  },
+  {
+    path: '/',
+    element: <Navigate to={'/index'} />,
   },
 ]

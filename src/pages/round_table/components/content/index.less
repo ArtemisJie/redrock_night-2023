@@ -15,8 +15,9 @@
     height: 18.6111vw;
     left: 0;
     top: 33.8194vw;
-    background: linear-gradient(0deg, rgba(147, 190, 255, 0.2), rgba(147, 190, 255, 0.2)), rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(20px);
+    background-image: url(../../../../assets/roundTable/introudceBg.png);
+    background-size: contain;
+    border: 0px solid #00000000;
     .content {
       position: absolute;
       width: 49.7917vw;
@@ -59,7 +60,7 @@
         position: absolute;
         top: 2.4306vw;
         left: 5.7vw;
-        width: 3.3333vw;
+        width: 15vw;
         height: 1.9444vw;
         font-family: 'Microsoft YaHei';
         font-weight: 400;
@@ -143,10 +144,10 @@
         background-repeat: no-repeat;
         background-size: 1.6667vw 0.8333vw;
         background-position: -5vw 6vw;
+        transition: background-position 500ms;
         @media (max-width: 850px) {
           background: none;
         }
-        transition: background-position 500ms;
         @media (max-width: 850px) {
           width: 18vw;
         }
@@ -172,6 +173,12 @@
             display: none;
           }
         }
+      }
+      li::before {
+        content: '';
+        width: 0;
+        height: 0;
+        transition: all 500ms;
       }
 
       .active {

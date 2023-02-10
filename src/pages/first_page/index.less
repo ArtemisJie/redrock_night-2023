@@ -23,7 +23,7 @@
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background: #000000;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -71,6 +71,31 @@
       background: #306fff;
       opacity: 1;
     }
+  }
+  .swiper-button-prev {
+    opacity: 1;
+    color: rgba(0, 0, 0, 0);
+    background-image: url(../../assets/firstPage/smallBannerLeft.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    transform-origin: center;
+  }
+  .swiper-button-next {
+    opacity: 1;
+    color: rgba(0, 0, 0, 0);
+    background-image: url(../../assets/firstPage/smallBannerLeft.png);
+    transform: rotateZ(180deg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    transform-origin: center;
+  }
+  .swiper-button-prev:hover {
+    background-image: url(../../assets/firstPage/smallBannerRight.png);
+    transform: rotateZ(180deg);
+  }
+  .swiper-button-next:hover {
+    background-image: url(../../assets/firstPage/smallBannerRight.png);
+    transform: rotateZ(0deg);
   }
 }
 
@@ -150,6 +175,16 @@
   width: 100%;
   height: 45vw;
   .banner_setting();
+  .swiper-button-prev {
+    width: 1.5vw;
+    height: 2vw;
+    background-size: 1.5vw 2vw;
+  }
+  .swiper-button-next {
+    width: 1.5vw;
+    height: 2vw;
+    background-size: 1.5vw 2vw;
+  }
   .slide1 {
     position: relative;
     width: 100vw;
@@ -305,51 +340,41 @@
   }
   .small_banner {
     position: absolute;
-    width: 50.6806vw;
+    width: 50vw;
     height: 27.0417vw;
     top: 6.1667vw;
     left: 7.5556vw;
     .banner_setting();
+    .hidden {
+      opacity: 0;
+    }
     .swiper-button-prev {
       opacity: 1;
       position: absolute;
       top: 25vw;
       left: 3.3333vw;
-      color: rgba(0, 0, 0, 0);
-      background-image: url(../../assets/firstPage/smallBannerLeft.png);
       width: 8px;
       height: 14.62px;
-      background-size: contain;
+      background-size: 8px 14.62px;
     }
     .swiper-button-next {
       opacity: 1;
       position: absolute;
       top: 25vw;
       left: 6.3889vw;
-      color: rgba(0, 0, 0, 0);
-      background-image: url(../../assets/firstPage/smallBannerRight.png);
       width: 8px;
       height: 14.62px;
-      background-size: contain;
+      background-size: 8px 14.62px;
     }
-    .small_banner:hover .swiper {
-      opacity: 1;
-    }
-
-    // .swiper-button-next {
-    //   opacity: 1;
-    // }
   }
+  img {
 
-  .slide1 {
-    img {
-      width: 51.6806vw;
-      height: 27.0417vw;
-      transition: all 300ms;
-    }
-    img:hover {
-      transform: scale(1.1);
-    }
+    width: 51.6806vw !important;
+    height: 27.0417vw;
+    transition: all 300ms;
+  }
+  img:hover {
+    transform: scale(1.1);
   }
   .calendar {
     position: absolute;
