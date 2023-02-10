@@ -1,3 +1,85 @@
+.container {
+  position: relative;
+  top: 72px;
+  width: 100%;
+  background-color: #030C1E;
+  color: aliceblue;
+}
+
 .replayNav {
-  background-color: aqua;
+  width: 78.8889vw;
+  height: 69.6969697vw;
+  margin: 0 auto;
+}
+
+.navBar {
+  position: relative;
+  display: flex;
+  width: 78.8889vw;
+  height: 8.19964vw;
+  border-bottom: 2px solid rgba(176, 179, 187, 0.3);
+
+}
+
+.firstListItem {
+  top: 4.278074vw;
+  position: absolute;
+  font-family: 'Microsoft YaHei';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.139vw;
+  line-height: 2.852vw;
+}
+
+#wholeReplay {
+  left: 0;
+  margin-right: 3.3333vw;
+}
+
+#resultShow {
+  left: 12.53472vw;
+}
+
+.secondList {
+  width: 13.33333vw;
+  height: 16.310vw;
+  position: absolute;
+  top: 3.565vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: #383D4A;
+  box-shadow: 0px 0px 20px rgba(4, 11, 25, 0.36);
+  border-radius: 2px;
+  display: none;
+  &Item {
+    width: 10vw;
+    height: 2.1390vw;
+    overflow: hidden; //超出的文本隐藏
+    text-overflow: ellipsis; //溢出用省略号显示
+    white-space: nowrap; //溢出不换行
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.604vw;
+    line-height: 2.1390vw;
+    color: #DCE0E7;
+  }
+}
+
+.currentLocation {
+  top: 5.525884vw;
+  position: absolute;
+  right: 0;
+  font-family: 'Microsoft YaHei';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2478vw;
+  line-height: 1.06427vw;
+  text-align: right;
+
+  /* geek白/4 */
+
+  color: #575B62;
 }

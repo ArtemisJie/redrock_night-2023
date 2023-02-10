@@ -39,16 +39,20 @@ export default [
   },
   {
     path: '/',
-    element: <Navigate to={'/index'} />,
+    element: <Navigate to={'/replay'} />,
   },
   {
-    path: '/replay',
+    path: 'replay',
     element: <Replay />,
     children: [
       {
         path: 'video-play/:title',
         element: <Video />,
       },
+      {
+        path: '/replay',
+        element: <Navigate to={'/replay/video-play/video1'} />
+      }
     ],
   },
 ]
