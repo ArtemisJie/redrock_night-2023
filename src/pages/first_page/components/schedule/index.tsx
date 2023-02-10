@@ -121,8 +121,6 @@ export default function index(props: IProps) {
         {nowData.map((e, i) => {
           return (
             <li key={i} className={[index === i ? 'active' : ''].join('')} onClick={change(i)}>
-              <span className="time">{e.time}</span>
-              <span className="line"></span>
               <div className="card">
                 <span className="content">{e.content}</span>
                 <span className="hosts">
@@ -137,6 +135,8 @@ export default function index(props: IProps) {
               <span className="circle">
                 <span className="triangle"></span>
               </span>
+              <span className="time">{e.time}</span>
+              <span className="line"></span>
             </li>
           )
         })}

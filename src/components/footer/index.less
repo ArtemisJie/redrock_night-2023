@@ -1,0 +1,137 @@
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 19.0972vw;
+  background-color: #001134;
+  .logo {
+    position: absolute;
+    width: 13.2639vw;
+    height: 3.1944vw;
+    left: 10.56%;
+    top: 26.55%;
+    background-image: url(../../assets/firstPage/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    @media (max-width: 910px) {
+      top: calc(50% - 3.1944vw);
+      transform: scale(1.2);
+    }
+  }
+  .qrCode {
+    position: absolute;
+    left: 72.7083vw;
+    top: 3.3333vw;
+    width: 6.6667vw;
+    height: 3.8889vw;
+    span:nth-child(1) {
+      position: absolute;
+      top: 1vw;
+      display: inline-block;
+      width: 110%;
+      font-family: 'Microsoft YaHei';
+      font-weight: 400;
+      font-size: 1.1111vw;
+      line-height: 1.9444vw;
+      color: #b3b6bd;
+      @media (max-width: 1030px) {
+        left: 1vw;
+        width: 100px;
+        transform: scale(0.9);
+      }
+      @media (max-width: 780px) {
+        left: -1vw;
+        width: 100px;
+        transform: scale(0.8);
+      }
+      @media (max-width: 570px) {
+        display: none;
+      }
+    }
+    span:nth-child(1)::before {
+      position: absolute;
+      right: 5%;
+      top: -0.7556vw;
+      content: '';
+      width: 30px;
+      height: 4px;
+      background: #1d4dd2;
+      @media (max-width: 1030px) {
+        right: 25%;
+      }
+      @media (max-width: 830px) {
+        top: -1vw;
+        right: 30%;
+      }
+    }
+    span:nth-child(2) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 6.7361vw;
+      height: 6.7361vw;
+      position: absolute;
+      left: 11.3194vw;
+      top: 8.25%;
+      background-color: #fff;
+      @media (max-width: 570px) {
+        transform: scale(1.5);
+        left: 10vw;
+        top: 2vw;
+      }
+    }
+    img {
+      width: 5.625vw;
+      height: 5.625vw;
+    }
+  }
+  .line {
+    position: absolute;
+    width: 81.2vw;
+    height: 3vw;
+    left: 10%;
+    right: 10.56%;
+    top: 72.63%;
+    bottom: 22.23%;
+    background-image: url(../../assets/firstPage/footerline.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .text {
+    position: absolute;
+    left: 10.5556vw;
+    top: 14.375vw;
+    width: 31.6667vw;
+    height: 1.3889vw;
+    @media (max-width: 930px) {
+      transform: scale(0.9);
+      transform-origin: 0 0;
+    }
+    @media (max-width: 910px) {
+      display: none;
+    }
+    .copyright {
+      display: inline-block;
+      width: 100%;
+      position: absolute;
+      top: 75.27%;
+      font-family: 'Microsoft YaHei';
+      font-weight: 400;
+      font-size: 5px;
+      line-height: 1.25vw;
+      color: #575b62;
+    }
+    .email {
+      display: inline-block;
+      position: absolute;
+      width: 100%;
+      left: 20vw;
+      top: 76%;
+      font-family: 'Microsoft YaHei';
+      font-weight: 400;
+      font-size: 5px;
+      line-height: 1.25vw;
+      color: #575b62;
+    }
+  }
+}
