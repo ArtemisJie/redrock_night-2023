@@ -160,6 +160,8 @@ export default function index(props: IProps) {
     <div className="nowContent">
       <img className="photo" src={img} alt="" />
       <div className="info">
+        <div className="bg1"></div>
+        <div className="bg2"></div>
         <div className="content">
           <img src={avatar} alt="" />
           <p>{topic}</p>
