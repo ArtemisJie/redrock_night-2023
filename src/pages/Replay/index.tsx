@@ -3,6 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom'
 import Routes from '@/routers/route'
 import Header from '../../components/header/index'
 import './index.less'
+
 export default () => {
   const listRef = useRef<HTMLLIElement | null>(null)
   const secondList = useRef<HTMLUListElement | null>(null)
@@ -14,7 +15,6 @@ export default () => {
   }, [])
   return (
     <div className="container">
-      <Header />
       <div className="replayNav">
         <ul className="navBar">
           <li className="firstListItem" id='wholeReplay'>
@@ -43,14 +43,16 @@ export default () => {
             </div>
           </li>
           <li className='currentLocation'>
+            <span className="iconfont">&#xe610;</span>
             <span className='currentLocationText'>
               首页 · 回放入口
             </span>
           </li>
         </ul>
         <div className='wholeReplayTitle'>
-          <span className='wholeReplayTitleText'>全程回放</span>
-          <span className='wholeReplayTitleCurcle'></span>
+          <span className='wholeReplayTitleText'>全程回放
+            <span className='wholeReplayTitleCurcle'></span>
+          </span>
         </div>
         <div className="videoPlay">
           <Outlet />

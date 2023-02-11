@@ -15,7 +15,9 @@ export default () => {
           </p>
         </div>
       </div>
-      <video src="blob:https://www.youtube.com/a9c3527d-d197-4f6a-8a47-691098d39fc0"></video>
+      <div className='videoPlayer'>
+        <video src="../../../../assets/video/demoVideo.mp4"></video>
+      </div>
     </div>
   )
 }
