@@ -22,7 +22,8 @@
 		"react-dom": "^18.2.0",
 		"react-router": "^6.8.0",
 		"react-router-dom": "^6.8.0",
-		"swiper": "^8.4.6"
+		"swiper": "^8.4.6",
+		"video.js": "^8.0.4"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.26",

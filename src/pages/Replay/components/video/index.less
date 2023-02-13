@@ -1,21 +1,24 @@
-.videoContainer{
+.videoContainer {
     width: 100%;
     height: 42.3351vw;
     display: flex;
     justify-content: space-between;
 }
-.meetingTitle{
+
+.meetingTitle {
     width: 16.8056vw;
     height: 42.3351vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    &Bar{
+
+    &Bar {
         width: 3.3333vw;
-        height:0.681266vw;
+        height: 0.681266vw;
         background: #689FFF;
     }
-    p{
+
+    p {
         height: 28.08378vw;
         overflow: hidden; //超出的文本隐藏
         text-overflow: ellipsis; //溢出用省略号显示
@@ -24,11 +27,41 @@
         font-style: normal;
         font-weight: 400;
         font-size: 1.1111vw;
-        line-height:2.49554vw;
+        line-height: 2.49554vw;
         color: #B3B6BD;
     }
 }
-.videoPlayer{
+
+.videoPlayer {
     width: 58.8194vw;
+    height: 100%;
+}
+
+.video-js .vjs-duration,
+.vjs-no-flex .vjs-duration {
+    display: inline-block;
+}
+
+.video-js .vjs-current-time,
+.vjs-no-flex .vjs-current-time {
+    display: inline-block;
+
+}
+
+.vjs-control-bar {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    height: 8.002vw !important;
+}
+
+.vjs-play-control {
+    width: 36px !important;
+    height: 36px !important;
+}
+
+.vjs-play-control span {
+    width: 100%;
     height: 100%;
 }

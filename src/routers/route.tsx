@@ -7,7 +7,7 @@ import Summary from '../pages/introduction/components/summary'
 import Invitation from '../pages/introduction/components/invitation'
 import Replay from '../pages/replay/index'
 import Video from '../pages/replay/components/video/index'
-import ResultShow from '@/pages/result_show'
+import ResultShow from '../pages/result_show'
 
 export default [
   {

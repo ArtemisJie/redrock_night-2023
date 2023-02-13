@@ -1,10 +1,6 @@
-.iconfont {
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@titleHeight: 2.8344vw;
+@iconHeight: 1.9444vw;
+@titleSize: 1.667vw;
 
 .container {
   position: relative;
@@ -30,30 +26,157 @@
 }
 
 .firstListItem {
-  top: 4.278074vw;
   position: absolute;
   font-family: 'Microsoft YaHei';
   font-style: normal;
   font-weight: 400;
-  font-size: 2.139vw;
-  line-height: 2.852vw;
+  font-size: @iconHeight;
+
+  &ResultText {
+    display: inline-block;
+    margin-right: 0.8125vw;
+  }
 }
 
 #wholeReplay {
+  width: 13vw;
+  height: @titleHeight;
+  bottom: 0;
   left: 0;
-  margin-right: 3.3333vw;
 
+  a {
+    display: inline-block;
+    width: 9.4444vw;
+    height: 2.2222vw;
+    font-family: 'Microsoft YaHei';
+    font-weight: 400;
+    font-size: 1.6667vw;
+    line-height: 2.2222vw;
+    color: #ffffff;
+    vertical-align: 0.3vw;
+  }
+
+  .text {
+    display: flex;
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 400;
+    font-size: @titleSize;
+  }
+
+  .wholeReplayIcon {
+    width: @iconHeight;
+    height: @iconHeight;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 0.8333vw;
+    background-image: url(../../assets/replay/replay-active.png);
+
+    img {
+      transition: all 500ms;
+      width: @iconHeight;
+      height: @iconHeight;
+    }
+
+  }
 }
 
 #resultShow {
+  width: 13.54983vw;
+  height: @titleHeight;
   left: 12.53472vw;
+  bottom: 0;
+
+  .resultShowIcon {
+    margin-right: 0.8333vw;
+    width: @iconHeight;
+    height: @iconHeight;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/replay/result-active.png);
+
+    img {
+
+      width: @iconHeight;
+      transition: all 500ms;
+      height: @iconHeight;
+    }
+  }
+
+  .text {
+    position: absolute;
+    top: 0.1777vw;
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 400;
+    font-size: @titleSize;
+  }
+
+  a {
+    line-height: @titleHeight - 1vw;
+    color: #ffffff;
+    vertical-align: 0.3vw;
+  }
+
+
+
+  .arrowIcon {
+    height: 0.55556vw;
+    width: 1.295vw;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0.8333vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/replay/arrow-active.png);
+
+    img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      transition: all 500ms;
+      height: 0.55556vw;
+      width: 1.095vw;
+    }
+  }
+}
+
+.active {
+  color: #689fff !important;
+
+  img {
+    opacity: 0;
+  }
+}
+
+.secondListShow {
+  width: 13.33333vw;
+  height: 16.310vw;
+  position: absolute;
+  top: 2.5429vw;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: #383D4A;
+  box-shadow: 0px 0px 20px rgba(4, 11, 25, 0.36);
+  border-radius: 2px;
 }
 
 .secondList {
   width: 13.33333vw;
   height: 16.310vw;
   position: absolute;
-  top: 3.565vw;
+  top: 2.5429vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -79,8 +202,9 @@
 }
 
 .currentLocation {
-  top: 5.525884vw;
+  // top: 5.525884vw;
   position: absolute;
+  bottom: 1.063vw;
   right: 0;
   font-family: 'Microsoft YaHei';
   font-style: normal;
@@ -101,26 +225,15 @@
   justify-content: center;
 
   &Text {
-    position: relative;
-    font-family: 'Microsoft YaHei';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 2.2222vw;
-    line-height: 3.743vw;
-    color: #689FFF;
-  }
-
-  &Curcle {
-    position: absolute;
-    width:2.29167vw;
-    height:2.29167vw;
-    left:1.18056vw;
-    top: 1.604vw;
-    border-top:3px solid #73FFEE ;
-    border-radius: 50%;
-    filter: blur(5px);
+    display: inline-block;
+    width: 8.88889vw;
+    height: 3.7201vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/replay/replayTitle.png);
   }
 }
-.videoPlay{
- height: 49.4652vw;
+
+.videoPlay {
+  height: 49.4652vw;
 }
