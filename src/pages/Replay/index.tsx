@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import Routes from '@/routers/route'
 import Header from '../../components/header/index'
@@ -11,23 +11,30 @@ import './index.less'
 export default () => {
   const listRef = useRef<HTMLLIElement | null>(null)
   const secondList = useRef<HTMLUListElement | null>(null)
+  const linkRef = useRef<HTMLAnchorElement>(null)
+  const resultLinkRef = useRef<HTMLAnchorElement>(null)
 
   useEffect(() => {
     listRef.current?.addEventListener('mouseover', () => {
-      secondList.current!.className = 'secondListShow'
+      (secondList.current as HTMLUListElement).className = 'secondListShow'
     })
     listRef.current?.addEventListener('mouseout', () => {
 
-      secondList.current!.className = 'secondList'
+      (secondList.current as HTMLUListElement).className = 'secondList'
     })
-
+    resultLinkRef.current?.addEventListener('click', () => {
+      (resultLinkRef.current as HTMLAnchorElement).className = 'active';
+    })
+    secondList.current?.addEventListener('click', () => {
+      (resultLinkRef.current as HTMLAnchorElement).className = 'active';
+    })
   }, [])
   return (
     <div className="container">
       <div className="replayNav">
         <ul className="navBar">
           <li className="firstListItem" id='wholeReplay'>
-            <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} to="/replay/video-play/video1">
+            <NavLink ref={linkRef} className={({ isActive }) => (isActive ? 'active' : undefined)} to="/replay/video-play/video1">
               <span className="wholeReplayIcon">
                 <img src={replayIcon} />
               </span>
@@ -35,7 +42,7 @@ export default () => {
             </NavLink>
           </li>
           <li className="firstListItem" id='resultShow' ref={listRef}>
-            <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} to="/replay/video-play/video2">
+            <NavLink ref={resultLinkRef} to="/replay/video-play/video5">
               <span className="resultShowIcon">
                 <img src={resultIcon} />
               </span>
@@ -46,7 +53,7 @@ export default () => {
             </NavLink>
             <ul className="secondList" ref={secondList}>
               <li className="secondListItem">
-                <NavLink to="/replay/video-play/video1">无处不在的云原生</NavLink>
+                <NavLink to="/replay/video-play/video5">无处不在的云原生</NavLink>
               </li>
               <li className="secondListItem">
                 <NavLink to="/replay/video-play/video2">设计不止36技</NavLink>
