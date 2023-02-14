@@ -1,72 +1,546 @@
+.commonImg {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 @keyframes text1 {
-    0%{
-      transform: translateY(12vw);
-    }
-    100%{
-      transform: translateY(0vw);
+  0% {
+    transform: translateY(12vw);
+  }
+
+  100% {
+    transform: translateY(0vw);
+  }
+}
+
+@keyframes text2 {
+  0% {
+    transform: translateY(12vw);
+  }
+
+  100% {
+    transform: translateY(0vw);
+  }
+}
+
+.result-show-container {
+  width: 100%;
+}
+
+.poster {
+  overflow: hidden;
+  width: 100%;
+  height: 50vw;
+  background-image: url(../../assets/roundTable/poster.png);
+  background-size: 100% 50vw;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 100 !important;
+
+  .text1 {
+    transition: transform 200ms;
+    position: absolute;
+    width: 16.7361vw;
+    height: 5.0694vw;
+    left: 41.5278vw;
+    top: 18.3333vw;
+    background-image: url(../../assets/roundTable/text1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: text1 800ms;
+  }
+
+  .text2 {
+    transition: transform 200ms;
+    position: absolute;
+    width: 25.0694vw;
+    height: 7.6389vw;
+    left: 37.4306vw;
+    top: 24vw;
+    background-image: url(../../assets/roundTable/text2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: text2 800ms;
+    transform: translateY(60vw);
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  .text3 {
+    transition: transform 200ms;
+    position: absolute;
+    width: 21.6667vw;
+    height: 2.2222vw;
+    left: 39.0278vw;
+    top: 32.7083vw;
+    font-family: 'Microsoft YaHei';
+    font-weight: 400;
+    font-size: 1.6667vw;
+    line-height: 2.2222vw;
+    color: #dce0e7;
+    animation: text2 800ms;
+    transform: translateY(60vw);
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.lighted {
+  width: 11.11vw !important;
+  height: 13.403vw !important;
+
+  .avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 11.11vw !important;
+    height: 11.11vw !important;
+    .commonImg();
+    background-image: url(../../assets/result/avatar-curcle.png) !important;
+  }
+
+  img {
+    transform: scale(1.25);
+  }
+
+  .name {
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.111vw;
+    line-height: 1.458vw;
+    text-align: center;
+    background: linear-gradient(90deg, #3C7EFF 50%, #73FFEE 97.69%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.people-show {
+  transition: all 0.3s;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 9.944vw;
+  height: 9.028vw;
+  z-index: 300;
+
+  .avatar {
+    img {
+      transition: all 0.3s;
+      width: 6.944vw;
+      height: 6.944vw;
     }
   }
-  @keyframes text2 {
-    0%{
-      transform: translateY(12vw);
-    }
-    100%{
-      transform: translateY(0vw);
+
+  .name {
+    transition: all 0.3s;
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #B3B6BD;
+  }
+
+}
+
+.people-show:hover {
+  width: 11.11vw !important;
+  height: 13.403vw !important;
+  .lighted();
+}
+
+.people-show::-moz-focus-outer {
+  .people-show();
+}
+
+.result-show-main {
+  position: relative;
+
+  .result-nav-container {
+    width: 100%;
+    height: 6.377vw;
+    position: sticky;
+    top: 5vw;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    background-color: #101010;
+    opacity: 0.6;
+    backdrop-filter: blur(30px);
+    overflow: hidden;
+
+    .result-nav {
+      width: 58.75vw;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+
+      &-content {
+        font-family: 'Microsoft YaHei';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.42vw;
+        padding: 0.7086vw 2.014vw 0.7086vw 2.014vw;
+        color: #93BEFF;
+        border: 1px solid #93BEFF;
+        border-radius: 2px;
+      }
+
+      a {
+        font-family: 'Microsoft YaHei';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.42vw;
+        padding: 0.7086vw 2.014vw 0.7086vw 2.014vw;
+        color: #93BEFF;
+        border: 1px solid #93BEFF;
+        border-radius: 2px;
+      }
+
+      .active {
+        font-family: 'Microsoft YaHei';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.42vw;
+        padding: 0.7086vw 2.014vw 0.7086vw 2.014vw;
+        color: #306FFF;
+        border: 1px solid #306FFF;
+        border-radius: 2px;
+        background-color: rgba(147, 190, 255, 0.2);
+        ;
+      }
     }
   }
-  
-  .main_root {
-    .poster {
+
+  .introduction {
+    width: 100%;
+    height: 50vw;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #101010;
+    background-size: contain;
+    backdrop-filter: blur(30px);
+    z-index: 110;
+
+    .light {
+      position: absolute;
+      width: 15.21vw;
+      height: 15.21vw;
+      top: -14.6vw;
+      z-index: 4;
+      background: #306FFF;
+      filter: blur(50px);
+      transform: matrix(1, 0, 0, -1, 0, 0);
+    }
+
+    &-title {
+      width: 9.55vw;
+      height: 3.64vw;
+      margin: 0 auto;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url(../../assets/result/yinyan.png);
+    }
+
+    &-main {
+      width: 44.44vw;
+      font-family: 'Microsoft YaHei';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.389vw;
+      line-height: 2.78vw;
+      text-align: center;
+      color: #FFFFFF;
+
+      img {
+        position: absolute;
+        top: 11.81vw;
+        left: 25.64vw;
+        z-index: -1;
+      }
+    }
+
+    .detail {
+      width: 78%;
+      padding: 0 10.56%;
+      display: flex;
+      justify-content: space-between;
       overflow: hidden;
+
+      &-text {
+        font-family: 'Microsoft YaHei';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.111vw;
+        line-height: 1.944vw;
+        color: #575B62;
+
+      }
+    }
+  }
+
+  #video-replay {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 71.11vw;
+    background: #101010;
+    z-index: 100;
+
+    .light {
+      position: absolute;
+      width: 15.21vw;
+      height: 15.21vw;
+      top: -14.6vw;
+      background: #306FFF;
+      filter: blur(50px);
+      transform: matrix(1, 0, 0, -1, 0, 0);
+    }
+
+    .bg1 {
+      width: 19.79vw;
+      height: 33.33vw;
+      position: absolute;
+      top: 5.56vw;
+      left: -4.653vw;
+      .commonImg();
+      background-image: url(../../assets/result/video-left.png);
+    }
+
+    .bg2 {
+      width: 13.89vw;
+      height: 20.625vw;
+      position: absolute;
+      top: 0.56vw;
+      right: 0;
+      .commonImg();
+      background-image: url(../../assets/result/video-right.png);
+    }
+
+    .video-play-title {
+      width: 13.992vw;
+      height: 3.853vw;
+      margin-top: 5.56vw;
+      .commonImg();
+      background-image: url(../../assets/result/video.png);
+    }
+
+    .meeting-title {
+      width: 7.36vw;
+      height: 2.22vw;
+      .commonImg();
+      background-image: url(../../assets/result/meeting-title.png);
+    }
+
+    .meeting-content {
+      width: 57.083vw;
+      font-family: 'Microsoft YaHei';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.111vw;
+      line-height: 1.9444vw;
+      text-align: center;
+      color: #B3B6BD;
+    }
+  }
+
+  #introduction {
+    position: relative;
+    background-color: #101010;
+    width: 100%;
+    height: 50vw;
+
+    .light {
+      position: absolute;
+      width: 15.21vw;
+      height: 15.21vw;
+      top: -14.6vw;
+      left: 50vw - 7.6vw;
+      z-index: 4;
+      background: #306FFF;
+      filter: blur(50px);
+      transform: matrix(1, 0, 0, -1, 0, 0);
+    }
+
+    .introduction-title {
+      display: inline-block;
+      width: 19.55vw;
+      height: 3.853vw;
+      position: absolute;
+      left: 50vw - 9.725vw;
+      top: 11.875vw;
+      .commonImg();
+      background-image: url(../../assets/result/people-introduction.png);
+    }
+
+    .people-show-container {
+      position: relative;
       width: 100%;
       height: 50vw;
-      background-image: url(../../assets/roundTable/poster.png);
-      background-size: 100% 50vw;
-      background-repeat: no-repeat;
-      z-index: 2;
+      .commonImg();
+      background-image: url(../../assets/result/people-show-bg.png);
+
+      #people1 {
+        top: 3.06vw;
+        left: 25.144vw;
+      }
+
+      #people2 {
+        left: 13.681vw;
+        top: 18.542vw;
+      }
+
+      #people3 {
+        left: 26.32vw;
+        top: 34.41vw;
+      }
+
+      #people4 {
+        right: 25.69vw;
+        top: 4.583vw;
+      }
+
+      #people5 {
+        right: 7.92vw;
+        top: 20.42vw;
+      }
+
+      #people6 {
+        right: 24.31vw;
+        bottom: 5.33vw;
+      }
     }
-    .text1 {
-      transition: transform 200ms;
+  }
+
+  #content-replay {
+    width: 100%;
+    height: 62.5vw;
+    padding-bottom: 5.625vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    .light {
       position: absolute;
-      width: 16.7361vw;
-      height: 5.0694vw;
-      left: 41.5278vw;
-      top: 18.3333vw;
-      background-image: url(../../assets/roundTable/text1.png);
-      background-size: contain;
-      background-repeat: no-repeat;
-      animation: text1 800ms;
+      width: 15.21vw;
+      height: 15.21vw;
+      top: -14.6vw;
+      left: 50vw - 7.6vw;
+      z-index: 4;
+      background: #306FFF;
+      filter: blur(50px);
+      transform: matrix(1, 0, 0, -1, 0, 0);
     }
-    .text2 {
-      transition: transform 200ms;
-      position: absolute;
-      width: 25.0694vw;
-      height: 7.6389vw;
-      left: 37.4306vw;
-      top: 24vw;
-      background-image: url(../../assets/roundTable/text2.png);
-      background-size: contain;
-      background-repeat: no-repeat;
-      animation: text2 800ms;
-      transform: translateY(60vw);
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
+
+    .title {
+      width: 13.992vw;
+      height: 3.853vw;
+      .commonImg();
+      background-image: url(../../assets/result/content-introduction.png);
     }
-    .text3 {
-      transition: transform 200ms;
-      position: absolute;
-      width: 21.6667vw;
-      height: 2.2222vw;
-      left: 39.0278vw;
-      top: 32.7083vw;
-      font-family: 'Microsoft YaHei';
-      font-weight: 400;
-      font-size: 1.6667vw;
-      line-height: 2.2222vw;
-      color: #dce0e7;
-      animation: text2 800ms;
-      transform: translateY(60vw);
-      animation-delay: 1.2s;
-      animation-fill-mode: forwards;
+
+    .cloud {
+      width: 60.0694vw;
+      height: 14.31vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      &-title {
+        width: 14.375vw;
+        height: 2.2222vw;
+        .commonImg();
+        background-image: url(../../assets/result/cloud.png);
+      }
+
+      &-introduction {
+        text-align: center;
+        width: 100%;
+        height: 7.78vw;
+        font-family: 'Microsoft YaHei';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.1111vw;
+        line-height: 1.9444vw;
+        color: #B3B6BD;
+      }
+
+      &-ppt {
+        height: 1.25vw;
+        text-align: center;
+        font-family: 'Microsoft YaHei';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.972vw;
+        line-height: 1.25vw;
+        text-align: center;
+        color: #DCE0E7;
+
+        &-alert {
+          color: #46E5E5;
+        }
+      }
     }
+
+
+    .ppt-container {
+      width: 100%;
+      height: 31.84vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      img {
+        height: 15.0694vw;
+        margin-right: 1.67vw;
+      }
+
+      .top {
+        position: relative;
+        height: 15.0694vw;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        transition: all 0.5s;
+      }
+
+      .down {
+        position: relative;
+        height: 15.0694vw;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        transition: all 0.5s;
+      }
+    }
+  }
+}
+
+.ppt-container:hover {
+  .top {
+    transform: translateX(100px);
+  }
+
+  .down {
+    transform: translateX(-100px);
+  }
 }

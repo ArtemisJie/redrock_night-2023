@@ -21,11 +21,8 @@ export default () => {
       autoplay: false,
       loop: false,
       notSupportedMessage: '此视频暂无法播放，请稍后再试',
-      //poster: 'https://t7.baidu.com/it/u=1819248061,230866778&fm=193&f=GIF',//视频封面
+      playbackRates: [0.5, 1.0, 1.5, 2.0],
       controlBar: {
-        // timeDivider: true,//是否显示时间控制条，默认为true
-        // remainingTimeDisplay: false,//是否显示剩余时间，默认为true
-        // fullscreenToggle: true // 全屏按钮
         children: [
           { name: 'playToggle' },
           {
@@ -52,6 +49,7 @@ export default () => {
       if (!videoElement) return;
 
       const player = playerRef.current = videojs(videoElement, _option, () => {
+        let a = null
       });
       onReadyPlay(player)
     }
@@ -79,7 +77,7 @@ export default () => {
             height: '42.3351vw'
           }}
           ref={videoRef}
-          className='video-js vjs-big-play-centered'
+          className='video-js vjs-big-play-centered vjs-matrix'
           data-setup='{}'
         >
           <source src={video} type="video/mp4"></source>

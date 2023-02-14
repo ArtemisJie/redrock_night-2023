@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import Routes from '@/routers/route'
 import Header from '../../components/header/index'
@@ -11,7 +11,6 @@ import './index.less'
 export default () => {
   const listRef = useRef<HTMLLIElement | null>(null)
   const secondList = useRef<HTMLUListElement | null>(null)
-  const [active, setActive] = useState(undefined)
 
   useEffect(() => {
     listRef.current?.addEventListener('mouseover', () => {
