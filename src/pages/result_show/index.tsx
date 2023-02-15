@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import IDCard from './id_card/index'
+import Video from './video/index'
 import './index.less'
 import yinyanBg from '../../assets/result/yinyan-bg.png'
 import people1 from '../../assets/result/Ellipse 155.png'
@@ -25,7 +26,15 @@ import ppt11 from '../../assets/result/ppt1 (11).png'
 export default function index() {
   const [idx, setIdx] = useState<number>(0)
   const peoplesRef = useRef<HTMLDivElement>(null)
-
+  const link1 = useRef<HTMLAnchorElement>(null)
+  const link2 = useRef<HTMLAnchorElement>(null)
+  const link3 = useRef<HTMLAnchorElement>(null)
+  const scrollToAnchor = (anchorName) => {
+    if (anchorName) {
+      const anchorElement = document.getElementById(anchorName);
+      if (anchorElement) { anchorElement.scrollIntoView(); }
+    }
+  }
   const people = [
     {
       name: '红岩网校工作站', src: people1, id: 'people1'
@@ -47,8 +56,22 @@ export default function index() {
     }
   ]
   useEffect(() => {
+    link1.current?.addEventListener('click', () => {
+      (link1.current as HTMLAnchorElement).className = 'active';
+      (link2.current as HTMLAnchorElement).className = 'inactive';
+      (link3.current as HTMLAnchorElement).className = 'inactive';
+    })
+    link2.current?.addEventListener('click', () => {
+      (link2.current as HTMLAnchorElement).className = 'active';
+      (link1.current as HTMLAnchorElement).className = 'inactive';
+      (link3.current as HTMLAnchorElement).className = 'inactive';
+    })
+    link3.current?.addEventListener('click', () => {
+      (link3.current as HTMLAnchorElement).className = 'active';
+      (link2.current as HTMLAnchorElement).className = 'inactive';
+      (link1.current as HTMLAnchorElement).className = 'inactive';
+    })
     peoplesRef.current?.childNodes.forEach((item, idx) => {
-      console.log((item as HTMLDivElement).className);
       item.addEventListener('click', () => {
         setIdx(idx)
         peoplesRef.current?.childNodes.forEach((item) => {
@@ -69,15 +92,15 @@ export default function index() {
       <div className='result-show-main'>
         <div className='result-nav-container'>
           <div className='result-nav'>
-            <NavLink to='#video-replay' className={({ isActive }) => (isActive ? 'active' : undefined)}>
+            <Link to='#video-replay' ref={link1} onClick={() => { scrollToAnchor('video-replay') }}>
               视频回放
-            </NavLink>
-            <NavLink to='#introduction' className={({ isActive }) => (isActive ? 'active' : undefined)}>
+            </Link>
+            <Link to='#introduction' ref={link2} onClick={() => { scrollToAnchor('introduction') }}>
               团队/嘉宾介绍
-            </NavLink>
-            <NavLink to='#content-replay' className={({ isActive }) => (isActive ? 'active' : undefined)}>
+            </Link>
+            <Link to='#content-replay' ref={link3} onClick={() => { scrollToAnchor('content-replay') }}>
               内容回放
-            </NavLink>
+            </Link>
           </div>
         </div>
         <div className='introduction'>
@@ -97,14 +120,16 @@ export default function index() {
             <span className='detail-text'>演讲地点:重庆邮电大学</span>
           </div>
         </div>
-        <div id='video-replay'>
+        <div id='video-replay' >
           <span className='light'></span>
           <span className='bg1'></span>
           <span className='bg2'></span>
           <span className='video-play-title'></span>
           <span className='meeting-title'></span>
           <span className='meeting-content'>会议描述会议描述会议描述会议一些会议描述一些会议描述一些会议描述会议描述会议描述会议描述会议一些会议描述一些会议描述一些会议描述会议描述会议描述会议描述会议一些会议描述一些会议描述一些会议描述会议描述会议</span>
-          <div style={{ width: '78.89vw', height: '44.375vw', background: 'blue' }}></div>
+          <div className='video-box'>
+            <Video />
+          </div>
         </div>
         <div id='introduction'>
           <span className='light'></span>
