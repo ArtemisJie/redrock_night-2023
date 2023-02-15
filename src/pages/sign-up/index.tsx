@@ -1,7 +1,5 @@
 import React from 'react'
-import Footer from '../../components/footer'
-import Header from '../../components/header'
-import qrcode from '../../assets/introduction/qrcode.png'
+import qrcode from '/introduction/qrcode.png'
 import './index.less'
 
 export default function index() {

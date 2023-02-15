@@ -2,9 +2,9 @@ import { useRef, useEffect, useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import Routes from '@/routers/route'
 import Header from '../../components/header/index'
-import arrow from '../../assets/replay/arrow-down.png'
-import replayIcon from '../../assets/replay/replayIcon.png'
-import resultIcon from '../../assets/replay/result.png'
+import arrow from '/replay/arrow-down.png'
+import replayIcon from '/replay/replayIcon.png'
+import resultIcon from '/replay/result.png'
 
 import './index.less'
 

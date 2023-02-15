@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import avatar1 from '../../../../assets/firstPage/avatar1.png'
-import avatar2 from '../../../../assets/firstPage/avatar2.png'
-import avatar3 from '../../../../assets/firstPage/avatar3.png'
+import avatar1 from '/firstPage/avatar1.png'
+import avatar2 from '/firstPage/avatar2.png'
+import avatar3 from '/firstPage/avatar3.png'
 import './index.less'
 
 interface IProps {

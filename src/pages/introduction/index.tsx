@@ -1,8 +1,8 @@
 import React from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import './index.less'
-import icon1 from '../../assets/introduction/icon1.png'
-import icon2 from '../../assets/introduction/icon2.png'
+import icon1 from '/introduction/icon1.png'
+import icon2 from '/introduction/icon2.png'
 
 export default function index() {
   const { pathname } = useLocation()

@@ -1,13 +1,13 @@
 import { Navigate } from 'react-router-dom'
-import FirstPage from '../pages/first_page'
-import RoundTable from '../pages/round_table'
+import FirstPage from '../pages/first-page'
+import RoundTable from '../pages/round-table'
 import Introduction from '../pages/introduction'
-import SignUp from '../pages/sign_up'
+import SignUp from '../pages/sign-up'
 import Summary from '../pages/introduction/components/summary'
 import Invitation from '../pages/introduction/components/invitation'
 import Replay from '../pages/replay/index'
 import Video from '../pages/replay/components/video/index'
-import ResultShow from '../pages/result_show'
+import ResultShow from '../pages/result-show'
 
 export default [
   {

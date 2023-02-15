@@ -4,7 +4,6 @@ import 'video.js/dist/video-js.css';
 import './index.less'
 import videojs from 'video.js'
 import video from '/video/demoVideo.mp4'
-import { VideoPlayer } from '@videojs-player/react'
 
 export default () => {
   const { title } = useParams()
@@ -79,29 +78,18 @@ export default () => {
   }, [])
 
   return (
-    <div className="videoContainer">
-      <div className='meetingTitle'>
-        <div className='meetingTitleBar'></div>
-        <div className='meetingTitleText'>会议标题</div>
-        <div className='meetingTitleParagh'>
-          <p>
-            会议描述会议描述会议一些会议描述一些会议描述一些会议描述会议描述：会议描述会议描述会议一些会议描述一些会议描述一些会议描述会议描述：会议描述会议描述会议一些会议描述一些会议描述一些会议描述会议描述：会议描述会议描述会议一些会议描述一些会议描
-          </p>
-        </div>
-      </div>
-      <div className='videoPlayer' ref={showRef}>
-        <span className='qingxidu' ref={qingxiduRef}>高清</span>
-        <video
-          style={{
-            width: '58.8194vw',
-            height: '42.3351vw'
-          }}
-          ref={videoRef}
-          className='vjs-matrix video-js vjs-big-play-centered '
-        >
-          <source src={video}></source>
-        </video>
-      </div>
+    <div className='videoPlayer' ref={showRef}>
+      <span className='qingxidu' ref={qingxiduRef}>高清</span>
+      <video
+        style={{
+          width: '58.8194vw',
+          height: '42.3351vw'
+        }}
+        ref={videoRef}
+        className='vjs-matrix video-js vjs-big-play-centered '
+      >
+        <source src={video}></source>
+      </video>
     </div >
   )
 }

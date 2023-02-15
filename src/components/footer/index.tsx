@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.less'
-import qrcode from '../../assets/firstPage/qrcode.png'
+import qrcode from '/firstPage/qrcode.png'
 
 export default function index() {
   return (
