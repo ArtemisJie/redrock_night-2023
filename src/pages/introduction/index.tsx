@@ -1,8 +1,6 @@
 import React from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import './index.less'
-import Header from '../../components/header'
-import Footer from '../../components/footer'
 import icon1 from '../../assets/introduction/icon1.png'
 import icon2 from '../../assets/introduction/icon2.png'
 

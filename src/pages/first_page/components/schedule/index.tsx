@@ -12,7 +12,7 @@ const data1 = [
   {
     index: 1,
     time: '9:30 - 9:45',
-    content: '巴拉巴拉',
+    content: '内容1',
     hosts: {
       name: '耳东陈',
       position: '重庆邮电大学计算机学院院长',
@@ -22,7 +22,7 @@ const data1 = [
   {
     index: 2,
     time: '9:45 - 10:15',
-    content: '巴拉巴拉',
+    content: '内容1',
     hosts: {
       name: '耳东陈',
       position: '重庆邮电大学计算机学院院长',
@@ -32,7 +32,7 @@ const data1 = [
   {
     index: 3,
     time: '10:15 - 10:45',
-    content: '巴拉巴拉',
+    content: '内容1',
     hosts: {
       name: '耳东陈',
       position: '重庆邮电大学计算机学院院长',
@@ -42,7 +42,7 @@ const data1 = [
   {
     index: 4,
     time: '10:45 - 11:00',
-    content: '咕噜咕噜',
+    content: '内容1',
     hosts: {
       name: '耳东陈',
       position: '重庆邮电大学计算机学院院长',
@@ -54,7 +54,7 @@ const data2 = [
   {
     index: 1,
     time: '9:30 - 9:45',
-    content: '咕噜咕噜',
+    content: '内容2',
     hosts: {
       name: '耳东陈',
       position: '重庆邮电大学计算机学院院长',
@@ -64,7 +64,7 @@ const data2 = [
   {
     index: 2,
     time: '9:45 - 10:15',
-    content: '咕噜咕噜',
+    content: '内容2',
     hosts: {
       name: '耳东陈',
       position: '重庆邮电大学计算机学院院长',
@@ -74,7 +74,7 @@ const data2 = [
   {
     index: 3,
     time: '10:15 - 10:45',
-    content: '咕噜咕噜',
+    content: '内容2',
     hosts: {
       name: '耳东陈',
       position: '重庆邮电大学计算机学院院长',
@@ -84,7 +84,7 @@ const data2 = [
   {
     index: 4,
     time: '10:45 - 11:00',
-    content: '咕噜咕噜',
+    content: '内容2',
     hosts: {
       name: '耳东陈',
       position: '重庆邮电大学计算机学院院长',

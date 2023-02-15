@@ -29,25 +29,25 @@ export default function index() {
       title: '无处不在的云原生',
       content: '“无处不在的云原生”，是新一代开发者与开发环境的大势所趋，2022年1024程序员日，第二期Techo Day肟讯技术开放日旨在呈现腾讯更底层的云原生理念成果、全栈开发能力及最佳案例实践!',
       icon: resulticon1,
-      link: 'a',
+      link: '/replay/video-play/video5',
     },
     {
       title: '设计不止36技',
       content: '“无处不在的云原生”，是新一代开发者与开发环境的大势所趋，2022年1024程序员日，第二期Techo Day肟讯技术开放日旨在呈现腾讯更底层的云原生理念成果、全栈开发能力及最佳案例实践!',
       icon: resulticon2,
-      link: 'a',
+      link: '/replay/video-play/video2',
     },
     {
       title: '如何有效提升产研效率',
       content: '“无处不在的云原生”，是新一代开发者与开发环境的大势所趋，2022年1024程序员日，第二期Techo Day肟讯技术开放日旨在呈现腾讯更底层的云原生理念成果、全栈开发能力及最佳案例实践!',
       icon: resulticon3,
-      link: 'a',
+      link: '/replay/video-play/video3',
     },
     {
       title: 'Web端工具如何设计',
       content: '“无处不在的云原生”，是新一代开发者与开发环境的大势所趋，2022年1024程序员日，第二期Techo Day肟讯技术开放日旨在呈现腾讯更底层的云原生理念成果、全栈开发能力及最佳案例实践!',
       icon: resulticon4,
-      link: 'a',
+      link: '/replay/video-play/video4',
     },
   ]
   const [nowSchedule, setNowSchedule] = useState(0)
@@ -134,12 +134,16 @@ export default function index() {
             </Link>
           </li>
           <li>
-            <div className="navPic3"></div>
-            <p>成果展示</p>
+            <Link to="/result-show">
+              <div className="navPic3"></div>
+              <p>成果展示</p>
+            </Link>
           </li>
           <li>
-            <div className="navPic4"></div>
-            <p>回放入口</p>
+            <Link to="/replay/video-play/video1">
+              <div className="navPic4"></div>
+              <p>回放入口</p>
+            </Link>
           </li>
         </ul>
         <div className="arrange">

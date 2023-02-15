@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Content from './components/content'
-import poster from '../../assets/roundTable/poster.png'
 import './index.less'
 
 export default function index() {
