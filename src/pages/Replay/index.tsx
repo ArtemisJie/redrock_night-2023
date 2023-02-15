@@ -15,18 +15,27 @@ export default () => {
   const resultLinkRef = useRef<HTMLAnchorElement>(null)
 
   useEffect(() => {
+    (resultLinkRef.current as HTMLAnchorElement).className = 'inactive';
+    (linkRef.current as HTMLAnchorElement).className = 'active'
+    linkRef.current?.addEventListener('click', () => {
+      (resultLinkRef.current as HTMLAnchorElement).className = 'inactive';
+      (linkRef.current as HTMLAnchorElement).className = 'active'
+    })
     listRef.current?.addEventListener('mouseover', () => {
       (secondList.current as HTMLUListElement).className = 'secondListShow'
     })
     listRef.current?.addEventListener('mouseout', () => {
-
       (secondList.current as HTMLUListElement).className = 'secondList'
     })
     resultLinkRef.current?.addEventListener('click', () => {
+      (linkRef.current as HTMLAnchorElement).className = 'inactive';
       (resultLinkRef.current as HTMLAnchorElement).className = 'active';
+      console.log(1);
+
     })
     secondList.current?.addEventListener('click', () => {
       (resultLinkRef.current as HTMLAnchorElement).className = 'active';
+      (resultLinkRef.current as HTMLAnchorElement).className += ' active';
     })
   }, [])
   return (
@@ -34,7 +43,7 @@ export default () => {
       <div className="replayNav">
         <ul className="navBar">
           <li className="firstListItem" id='wholeReplay'>
-            <NavLink ref={linkRef} className={({ isActive }) => (isActive ? 'active' : undefined)} to="/replay/video-play/video1">
+            <NavLink ref={linkRef} to="/replay/video-play/video1">
               <span className="wholeReplayIcon">
                 <img src={replayIcon} />
               </span>

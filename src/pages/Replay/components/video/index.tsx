@@ -1,13 +1,18 @@
 import { useRef, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
 import './index.less'
+import videojs from 'video.js'
 import video from '../../../../assets/video/demoVideo.mp4'
+import { VideoPlayer } from '@videojs-player/react'
+
 export default () => {
   const { title } = useParams()
   const videoRef = useRef(null);
   const playerRef = useRef<any>(null);
+  const showRef = useRef<any>(null)
+  const qingxiduRef = useRef<any>(null)
+
   const [option, setOptopm] = useState({});
 
   const onReadyPlay = (palyer) => {
@@ -25,19 +30,21 @@ export default () => {
       controlBar: {
         children: [
           { name: 'playToggle' },
+
+          { name: 'currentTimeDisplay' },
+          { name: 'durationDisplay' },
+          { name: 'progressControl' },
+
+          {
+            name: 'playbackRateMenuButton',
+            'playbackRates': [0.5, 1, 1.5, 2, 2.5]
+          },
           {
             name: 'volumePanel',
             inline: false,
           },
-          { name: 'currentTimeDisplay' },
-          { name: 'durationDisplay' },
-          { name: 'progressControl' },
           {
             name: 'FullscreenToggle'
-          },
-          {
-            name: 'playbackRateMenuButton',
-            'playbackRates': [0.5, 1, 1.5, 2, 2.5]
           },
         ]
       }
@@ -56,6 +63,18 @@ export default () => {
   }
 
   useEffect(() => {
+    const controlBar = document.getElementsByClassName('vjs-control-bar')[0];
+
+    (showRef.current as HTMLDivElement).addEventListener('mouseover', () => {
+      (qingxiduRef.current as HTMLSpanElement).style.transform = 'translateY(0)'
+    });
+    (showRef.current as HTMLDivElement).addEventListener('mouseout', () => {
+      (qingxiduRef.current as HTMLSpanElement).style.transform = 'translateY(7.3vw)'
+    });
+    (qingxiduRef.current as HTMLSpanElement).addEventListener('mousemove', (e) => {
+      //console.log(controlBar.className += 'vjs-control-bar-show');
+    })
+
     init();
   }, [])
 
@@ -70,19 +89,22 @@ export default () => {
           </p>
         </div>
       </div>
-      <div className='videoPlayer'>
+      <div className='videoPlayer' ref={showRef}>
+        <span className='qingxidu' ref={qingxiduRef}>高清</span>
         <video
           style={{
             width: '58.8194vw',
             height: '42.3351vw'
           }}
           ref={videoRef}
-          className='video-js vjs-big-play-centered vjs-matrix'
-          data-setup='{}'
+          className='vjs-matrix video-js vjs-big-play-centered '
         >
-          <source src={video} type="video/mp4"></source>
+          <source src={video}></source>
         </video>
       </div>
     </div >
   )
 }
+
+
+
