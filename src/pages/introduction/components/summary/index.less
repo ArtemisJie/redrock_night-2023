@@ -1,0 +1,62 @@
+.summary {
+  height: 100vh;
+  h1 {
+    position: absolute;
+    z-index: 2;
+    width: 8.8889vw;
+    height: 2.9167vw;
+    left: calc(50% - 6.6667vw / 2);
+    top: 3.6111vw;
+    font-family: 'Microsoft YaHei';
+    font-weight: 700;
+    font-size: 2.2222vw;
+    line-height: 2.9167vw;
+    color: #689fff;
+    background: radial-gradient(circle closest-side at 35% 70%, #73ffee 70%, #3c7eff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    @media (max-width: 570px) {
+    top: 13.6111vw;
+    font-size: 4vw;
+      width: 20vw;
+      height: 5vw;
+      line-height: 5vw;
+      left: calc(50% - 20vw / 2);
+    }
+  }
+  .content {
+    position: absolute;
+    width: 78.8889vw;
+    height: 5.8333vw;
+    left: 10.5556vw;
+    top: 8.75vw;
+    font-family: 'Microsoft YaHei';
+    font-weight: 400;
+    font-size: 1.1111vw;
+    line-height: 1.9444vw;
+    color: #b3b6bd;
+    @media (max-width: 570px) {
+      top: 22vw;
+      height: calc(18vh);
+      line-height: 2.5vh;
+    }
+  }
+  .side {
+    position: absolute;
+    width: 23.6806vw;
+    height: 14.0278vw;
+    left: 63.8194vw;
+    top: 16.25vw;
+    background-image: url(/introduction/summarySide.png);
+    background-size: contain;
+    @media (max-width: 570px) {
+      top: calc(18vh + 26.25vw);
+    }
+  }
+  footer{
+    position: fixed;
+    bottom: 0;
+  }
+}
+

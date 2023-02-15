@@ -1,0 +1,234 @@
+@titleHeight: 2.8344vw;
+@iconHeight: 1.9444vw;
+@titleSize: 1.667vw;
+
+.container {
+  position: relative;
+  top: 72px;
+  width: 100%;
+  background-color: #030c1e;
+  color: aliceblue;
+  padding-bottom: 10vw;
+  .active {
+    color: #689fff;
+
+    img {
+      opacity: 0;
+    }
+  }
+}
+
+.replayNav {
+  width: 78.8889vw;
+  height: 69.6969697vw;
+  margin: 0 auto;
+}
+
+.navBar {
+  position: relative;
+  display: flex;
+  width: 78.8889vw;
+  height: 8.19964vw;
+  border-bottom: 2px solid rgba(176, 179, 187, 0.3);
+}
+
+.firstListItem {
+  position: absolute;
+  font-family: 'Microsoft YaHei';
+  font-style: normal;
+  font-weight: 400;
+  font-size: @iconHeight;
+
+  &ResultText {
+    display: inline-block;
+    margin-right: 0.8125vw;
+  }
+}
+
+#wholeReplay {
+  width: 13vw;
+  height: @titleHeight;
+  bottom: 0;
+  left: 0;
+
+  a {
+    display: inline-block;
+    width: 9.4444vw;
+    height: 2.2222vw;
+    font-family: 'Microsoft YaHei';
+    font-weight: 400;
+    font-size: 1.6667vw;
+    line-height: 2.2222vw;
+    color: #ffffff;
+    vertical-align: 0.3vw;
+  }
+
+  .text {
+    display: flex;
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 400;
+    font-size: @titleSize;
+  }
+
+  .wholeReplayIcon {
+    width: @iconHeight;
+    height: @iconHeight;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 0.8333vw;
+    background-image: url(/replay/replay-active.png);
+
+    img {
+      transition: all 500ms;
+      width: @iconHeight;
+      height: @iconHeight;
+    }
+  }
+}
+
+#resultShow {
+  width: 13.54983vw;
+  height: @titleHeight;
+  left: 12.53472vw;
+  bottom: 0;
+
+  .resultShowIcon {
+    margin-right: 0.8333vw;
+    width: @iconHeight;
+    height: @iconHeight;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/replay/result-active.png);
+
+    img {
+      width: @iconHeight;
+      transition: all 500ms;
+      height: @iconHeight;
+    }
+  }
+
+  .text {
+    position: absolute;
+    top: 0.1777vw;
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 400;
+    font-size: @titleSize;
+  }
+
+  a {
+    line-height: @titleHeight - 1vw;
+    color: #ffffff;
+    vertical-align: 0.3vw;
+  }
+
+  .arrowIcon {
+    height: 0.55556vw;
+    width: 1.295vw;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0.8333vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/replay/arrow-active.png);
+
+    img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      transition: all 500ms;
+      height: 0.55556vw;
+      width: 1.095vw;
+    }
+  }
+}
+
+.secondListShow {
+  width: 13.33333vw;
+  height: 16.31vw;
+  position: absolute;
+  top: 2.5429vw;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: #383d4a;
+  box-shadow: 0px 0px 20px rgba(4, 11, 25, 0.36);
+  border-radius: 2px;
+}
+
+.secondList {
+  width: 13.33333vw;
+  height: 16.31vw;
+  position: absolute;
+  top: 2.5429vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: #383d4a;
+  box-shadow: 0px 0px 20px rgba(4, 11, 25, 0.36);
+  border-radius: 2px;
+  display: none;
+
+  &Item {
+    width: 10vw;
+    height: 2.139vw;
+    overflow: hidden; //超出的文本隐藏
+    text-overflow: ellipsis; //溢出用省略号显示
+    white-space: nowrap; //溢出不换行
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.604vw;
+    line-height: 2.139vw;
+    color: #dce0e7;
+  }
+}
+
+.currentLocation {
+  // top: 5.525884vw;
+  position: absolute;
+  bottom: 1.063vw;
+  right: 0;
+  font-family: 'Microsoft YaHei';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2478vw;
+  line-height: 1.06427vw;
+  text-align: right;
+  color: #575b62;
+}
+
+.wholeReplayTitle {
+  width: 8.8889vw;
+  width: 78.8889vw;
+  height: 11.85383vw;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &Text {
+    display: inline-block;
+    width: 8.88889vw;
+    height: 3.7201vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/replay/replayTitle.png);
+  }
+}
+
+.videoPlay {
+  height: 49.4652vw;
+}

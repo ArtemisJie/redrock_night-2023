@@ -1,0 +1,123 @@
+.invitation {
+  position: relative;
+  left: calc(50% - 40vw);
+  width: 80vw;
+  background: rgba(176, 179, 187, 0.06);
+  .letter {
+    position: relative;
+    width: 69.4444vw;
+    left: 4.7222vw;
+    top: 3.3333vw;
+    border: 1px solid rgba(176, 179, 187, 0.3);
+    h1 {
+      position: absolute;
+      z-index: 2;
+      width: 6.6667vw;
+      height: 2.9167vw;
+      left: calc(50% - 6.6667vw / 2);
+      top: 3.6111vw;
+      font-family: 'Microsoft YaHei';
+      font-weight: 700;
+      font-size: 2.2222vw;
+      line-height: 2.9167vw;
+      color: #689fff;
+      background: radial-gradient(circle closest-side at 35% 70%, #73ffee 70%, #3c7eff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      @media (max-width: 570px) {
+        width: 15vw;
+        height: 7vw;
+        line-height: 7vw;
+        font-size: 5vw;
+        left: calc(50% - 15vw / 2);
+      }
+    }
+    .content {
+      margin-top: 11vw;
+      margin-left: calc(50% - 56.6667vw / 2);
+      width: 56.6667vw;
+      font-family: 'Microsoft YaHei';
+      font-weight: 400;
+      font-size: 1.1111vw;
+      line-height: 1.9444vw;
+      color: #b3b6bd;
+      @media (max-width: 570px) {
+        line-height: 4vw;
+        font-size: 3vw;
+      }
+      svg {
+        position: absolute;
+        width: 38.75vw;
+        height: 25.8333vw;
+        top: 11.1111vw;
+        left: calc(50% - 38.75vw / 2);
+      }
+      .bottom {
+        width: 67.2917vw;
+        height: 23.2639vw;
+        margin-left: -5vw;
+        background-image: url(/introduction/letterBottom.png);
+        background-size: contain;
+        margin-bottom: 7.5vw;
+        @media (max-width: 1000px) {
+          margin-bottom: 10vw;
+        }
+        @media (max-width: 700px) {
+          margin-bottom: 15vw;
+        }
+        @media (max-width: 570px) {
+          margin-bottom: 20vw;
+        }
+      }
+    }
+  }
+  .de1 {
+    position: absolute;
+    width: 6.1736vw;
+    height: 5.6264vw;
+    left: 2.3vw;
+    top: 64.1958vw;
+    transform: scale(1.5);
+    background-image: url(/introduction/de1.png);
+    background-size: contain;
+  }
+  .de2 {
+    position: absolute;
+    width: 2.6389vw;
+    height: 2.4306vw;
+    left: 32.9861vw;
+    top: 5.5556vw;
+    background-image: url(/introduction/de2.png);
+    background-size: contain;
+  }
+  .de3 {
+    position: absolute;
+    width: 2.3611vw;
+    height: 2.1528vw;
+    left: 41.5972vw;
+    top: 8.4028vw;
+    background-image: url(/introduction/de3.png);
+    background-size: contain;
+  }
+  .de4 {
+    position: absolute;
+    width: 15.475vw;
+    height: 14.1028vw;
+    right: -6vw;
+    top: 9vw;
+    transform: scale(1.4);
+    background-image: url(/introduction/de4.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .de5 {
+    position: absolute;
+    width: 8.75vw;
+    height: 8.0556vw;
+    left: 4.7222vw;
+    top: 0vw;
+    background-image: url(/introduction/de5.png);
+    background-size: contain;
+  }
+}

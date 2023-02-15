@@ -1,0 +1,98 @@
+.summary_root {
+  position: relative;
+  top: 72px;
+  background-color: #030c1e;
+  width: 100%;
+  .tab {
+    position: relative;
+    margin: 3.3333vw auto 0 auto;
+    width: 80vw;
+    height: 2.7778vw;
+    @media (max-width: 570px) {
+      height: 5vw;
+    }
+    border-bottom: 1px solid rgba(176, 179, 187, 0.3);
+    .position {
+      position: absolute;
+      width: 20vw;
+      top: 0.8vw;
+      right: 0;
+      font-family: 'Microsoft YaHei';
+      font-size: 0.9722vw;
+      line-height: 1.25vw;
+      text-align: right;
+      color: #575b62;
+      @media (max-width: 570px) {
+        width: 30vw;
+      }
+    }
+    .top_bar {
+      width: 22vw;
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: 570px) {
+        width: 30vw;
+      }
+      li {
+        @media (max-width: 570px) {
+          width: 10vw;
+        }
+        span {
+          width: 1.9444vw;
+          height: 1.9444vw;
+          display: inline-block;
+          background-size: contain;
+          background-repeat: no-repeat;
+          margin-right: 0.8333vw;
+          img {
+            transition: all 500ms;
+            height: 1.9444vw;
+          }
+        }
+        .icon1 {
+          background-image: url(/introduction/icon12.png);
+        }
+        .icon2 {
+          background-image: url(/introduction/icon22.png);
+        }
+        a {
+          display: inline-block;
+          width: 9.4444vw;
+          height: 2.2222vw;
+          font-family: 'Microsoft YaHei';
+          font-weight: 400;
+          font-size: 1.6667vw;
+          line-height: 2.2222vw;
+          color: #ffffff;
+          vertical-align: 0.3vw;
+          @media (max-width: 720px) {
+            width: 15vw;
+          }
+          @media (max-width: 570px) {
+            width: 25vw;
+          }
+        }
+        .active {
+          color: #689fff;
+          span {
+            img {
+              opacity: 0;
+            }
+          }
+        }
+      }
+      li:hover {
+        a {
+          color: #689fff;
+          img {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  .main {
+    position: relative;
+    height: 100%;
+  }
+}

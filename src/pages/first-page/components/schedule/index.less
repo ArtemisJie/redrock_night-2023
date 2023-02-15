@@ -1,0 +1,202 @@
+.schedule_list {
+  position: relative;
+  left: 7.9vw;
+  top: 10vw;
+  width: calc(100vw - 2 * 10.5556vw);
+  @media (max-width: 500px) {
+    top: 15vw;
+  }
+  li:nth-child(1) {
+    .line {
+      top: 4.5vw;
+      height: 5vw;
+    }
+  }
+  li:nth-child(4) {
+    .line {
+      height: 4.5vw;
+    }
+  }
+  li {
+    margin-bottom: 1.6667vw;
+    height: 8.3333vw;
+    width: 78.8889vw;
+    margin-top: -0.5vw;
+    color: #dce0e7;
+    .time {
+      transition: all 300ms;
+      display: inline-block;
+      position: absolute;
+      margin-top: 3.5vw;
+      left: 0.2vw;
+      font-family: 'DIN';
+      font-weight: 400;
+      font-size: 1.25vw;
+      line-height: 1.5278vw;
+      color: #dce0e7;
+      @media (max-width: 500px) {
+        margin-top: 3vw;
+        left: -2vw;
+        width: 20vw;
+        line-height: 3vw;
+      }
+    }
+    .line {
+      position: absolute;
+      width: 0vw;
+      height: 9.5vw;
+      left: 6vw;
+      margin: 0vw 5vw;
+      border: 1px dashed #306fff;
+      @media (max-width: 500px) {
+        display: none;
+      }
+    }
+    .circle {
+      z-index: 2;
+      transition: all 500ms;
+      position: absolute;
+      margin: 3.45vw 10.2vw;
+      width: 1.5vw;
+      height: 1.5vw;
+      border-radius: 50%;
+      border: 1px solid #3c7eff;
+      background-color: #030c1e;
+      @media (max-width: 500px) {
+        display: none;
+      }
+      .triangle {
+        position: absolute;
+        left: 0.25vw;
+        top: 0.55vw;
+        border: 0.5vw solid transparent;
+        border-top: 0.5vw solid #306fff;
+      }
+    }
+    .card {
+      overflow: hidden;
+      position: absolute;
+      right: 0;
+      width: 65.4861vw;
+      height: 8.3333vw;
+      background: rgba(176, 179, 187, 0.06);
+      backdrop-filter: blur(20px);
+      border-radius: 4px;
+      display: inline-block;
+      background-image: url(/firstPage/cardBg.png);
+      background-repeat: no-repeat;
+      background-size: 10.3125vw 6.875vw;
+      background-position: 13.4722vw 2.1528vw;
+      @media (max-width: 500px) {
+        right: -7vw;
+        width: 65.4861vw;
+      }
+      .content {
+        position: absolute;
+        width: 15.2778vw;
+        height: 1.8056vw;
+        left: 3.3333vw;
+        top: 3.2639vw;
+        font-family: 'Microsoft YaHei';
+        font-weight: 400;
+        font-size: 1.3889vw;
+        line-height: 1.8056vw;
+        color: #dce0e7;
+        @media (max-width: 500px) {
+          font-size: 5px;
+        }
+      }
+      .hosts {
+        position: absolute;
+        width: 15.2778vw;
+        height: 3.8889vw;
+        right: 0;
+        top: 2.2222vw;
+        div {
+          position: absolute;
+          right: 8.8889vw;
+          display: inline-block;
+          width: 15vw;
+          height: 3.1944vw;
+          text-align: right;
+          padding-right: 5vw;
+          .name {
+            margin-top: 0.75vw;
+            width: 20vw;
+            height: 2vw;
+            font-family: 'Microsoft YaHei';
+            font-size: 1.25vw;
+            line-height: 1.6667vw;
+            color: #dce0e7;
+          }
+          .position {
+            width: 20vw;
+            height: 1.25vw;
+            font-family: 'Microsoft YaHei';
+            font-size: 0.9722vw;
+            line-height: 1.25vw;
+            text-align: right;
+            color: #858990;
+            @media (max-width: 500px) {
+              display: none;
+            }
+          }
+        }
+        img {
+          position: absolute;
+          right: 3.3333vw;
+          width: 3.8889vw;
+          height: 3.8889vw;
+        }
+      }
+    }
+    .shadow {
+      transition: all 500ms;
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      width: 65.4861vw;
+      height: 8.3333vw;
+      border-radius: 4px;
+      background-color: #306fff;
+      transform: translateY(9vw);
+    }
+    .card:hover {
+      background-image: none;
+      & .shadow {
+        transform: translateY(0vw);
+      }
+      & .hosts div .position {
+        color: #dce0e7;
+      }
+      & + .circle .triangle {
+        transition: all 500ms;
+        transform: rotateZ(-90deg);
+        left: 0.6vw;
+        top: 0.3vw;
+      }
+      & ~ .time {
+        font-size: 1.6vw;
+        line-height: 1.5vw;
+      }
+    }
+  }
+//   .active {
+//     .shadow {
+//       transform: translateY(0vw);
+//     }
+//     .card .hosts div .position {
+//       color: #dce0e7;
+//     }
+//     .circle .triangle {
+//       transition: all 500ms;
+//       transform: rotateZ(-90deg);
+//       left: 0.6vw;
+//       top: 0.3vw;
+//     }
+//     .time {
+//       font-size: 1.6vw;
+//       line-height: 1.5vw;
+//     }
+//   }
+}

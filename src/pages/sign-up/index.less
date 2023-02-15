@@ -1,0 +1,118 @@
+.sign_up_root {
+  margin-top: 80px;
+  height: 100vh;
+  position: relative;
+  h1 {
+    position: absolute;
+    z-index: 2;
+    width: 10.4167vw;
+    height: 2.9167vw;
+    left: calc(50% - 10.4167vw / 2);
+    top: 3.3333vw;
+    font-family: 'Microsoft YaHei';
+    font-weight: 700;
+    font-size: 2.2222vw;
+    line-height: 2.9167vw;
+    color: #689fff;
+    background: radial-gradient(circle closest-side at 35% 70%, #73ffee 70%, #3c7eff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    @media (max-width: 690px) {
+      width: 13vw;
+      height: 7vw;
+      line-height: 7vw;
+      font-size: 3vw;
+      left: calc(50% - 13vw / 2);
+    }
+    @media (max-width: 570px) {
+      width: 20vw;
+      height: 7vw;
+      line-height: 7vw;
+      font-size: 5vw;
+      left: calc(50% - 20vw / 2);
+    }
+  }
+  .info {
+    position: absolute;
+    width: 50vw;
+    height: 1.25vw;
+    top: 7.7083vw;
+    left: 10.5556vw;
+    font-family: 'Microsoft YaHei';
+    font-weight: 400;
+    font-size: 0.9722vw;
+    line-height: 1.25vw;
+    color: #575b62;
+    @media (max-width: 690px) {
+      top: 14vw;
+    }
+    @media (max-width: 570px) {
+      top: 14vw;
+    }
+  }
+  h2 {
+    position: absolute;
+    width: 20vw;
+    height: 2.2222vw;
+    left: 10.5556vw;
+    top: 11.3472vw;
+    font-family: 'Microsoft YaHei';
+    font-weight: 700;
+    font-size: 1.6667vw;
+    line-height: 2.2222vw;
+    color: #dce0e7;
+    @media (max-width: 690px) {
+      top: 19vw;
+      width: 30vw;
+      font-size: 3vw;
+    }
+    @media (max-width: 570px) {
+      top: 23vw;
+      width: 30vw;
+      font-size: 4vw;
+    }
+  }
+  h2::before {
+    content: '//';
+  }
+  .text {
+    position: absolute;
+    width: 78.8889vw;
+    height: 15.5556vw;
+    left: 10.5556vw;
+    top: 15.2361vw;
+    font-family: 'Microsoft YaHei';
+    font-weight: 400;
+    font-size: 1.1111vw;
+    line-height: 1.9444vw;
+    color: #b3b6bd;
+    @media (max-width: 690px) {
+      top: 24vw;
+      line-height: 4vw;
+    }
+    @media (max-width: 570px) {
+      top: 28vw;
+      line-height: 4vw;
+    }
+    span {
+      font-weight: 700;
+      color: #dce0e7;
+    }
+  }
+  img {
+    position: absolute;
+    width: 8.3333vw;
+    height: 8.3333vw;
+    left: 45.8333vw;
+    top: 38.125vw;
+    @media (max-width: 690px) {
+      top: 90vw;
+      transform: scale(2);
+    }
+    @media (max-width: 570px) {
+      top: 110vw;
+      transform: scale(3);
+    }
+  }
+}

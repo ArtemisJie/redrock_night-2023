@@ -1,0 +1,127 @@
+.common {
+  header {
+    z-index: 999;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 72px;
+    background-color: rgba(4, 11, 25, 0.6);
+    backdrop-filter: blur(10px);
+    .logo {
+      position: absolute;
+      background-image: url(/firstPage/logo.png);
+      background-repeat: no-repeat;
+    }
+    .nav {
+      position: absolute;
+      color: #fff;
+      li {
+        font-family: 'Microsoft YaHei';
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .index {
+        position: absolute;
+        left: 0;
+      }
+      .geek {
+        position: absolute;
+        right: 0;
+      }
+      .active {
+        background: linear-gradient(116.96deg, #73ffee 9.73%, #3c7eff 40.45%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+    .redrockLogo {
+      position: absolute;
+      background-image: url(/firstPage/redrockLogo.png);
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.big_screen {
+  header {
+    .logo {
+      width: 149px;
+      height: 35.76px;
+      left: 10.55vw;
+      top: calc(50% - 17.88px);
+      background-size: contain;
+    }
+    .nav {
+      position: absolute;
+      width: 148px;
+      height: 28px;
+      left: 27.36vw;
+      top: 24px;
+      li {
+        font-family: 'Microsoft YaHei';
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+    .redrockLogo {
+      position: absolute;
+      width: 243px;
+      height: 30.66px;
+      right: 10.5556vw;
+      top: calc(50% - 15.33px);
+      background-size: contain;
+    }
+  }
+}
+
+.small_screen {
+  header {
+    .logo {
+      width: 50px;
+      height: 34.76px;
+      left: 10.55vw;
+      top: calc(50% - 17.38px);
+      background-position: 0 0;
+      background-size: 134px 32.18px;
+      transform: scale(0.8);
+    }
+    .nav {
+      position: absolute;
+      width: 110px;
+      height: 28px;
+      left: 30.36vw;
+      top: 24px;
+      li {
+        font-family: 'Microsoft YaHei';
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 24px;
+      }
+    }
+    .redrockLogo {
+      position: absolute;
+      width: 31px;
+      height: 30.66px;
+      right: 10.5556vw;
+      top: calc(50% - 15.33px);
+      background-position: 0 0;
+      background-size: 218.7px 27.59px;
+      transform: scale(0.8);
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .common();
+  .big_screen();
+}
+
+@media (max-width: 1000px) {
+  .common();
+  .small_screen();
+}
