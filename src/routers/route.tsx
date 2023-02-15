@@ -38,7 +38,7 @@ export default [
   },
   {
     path: '/',
-    element: <Navigate to={'/result-show'} />,
+    element: <Navigate to={'/index'} />,
   },
   {
     path: 'replay',
